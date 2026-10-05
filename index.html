@@ -1,0 +1,2213 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Блокнот · В смысле сложно?</title>
+<style>
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(assets/fonts/GolosText-normal-400-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Golos Text';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(assets/fonts/GolosText-normal-400-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url(assets/fonts/RobotoCondensed-normal-500-800-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url(assets/fonts/RobotoCondensed-normal-500-800-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(assets/fonts/ShantellSans-normal-400-700-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Shantell Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(assets/fonts/ShantellSans-normal-400-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/name-Caveat.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Marck Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/name-MarckScript.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/name-AmaticSC.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Rubik Bubbles';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/name-RubikBubbles.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/name-PixelifySans.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/name-Lobster.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/name-Unbounded.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+@font-face {
+  font-family: 'Rubik Wet Paint';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/name-RubikWetPaint.woff2) format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2c-2e, U+30-39, U+3f, U+41-5a, U+61-7a, U+ab, U+bb, U+c4, U+cb, U+cf, U+d6, U+dc, U+e4, U+eb, U+ef, U+f6, U+fc, U+ff, U+102-103, U+114-115, U+11e-11f, U+12c-12d, U+14e-14f, U+16c-16d, U+178, U+306, U+308, U+401, U+40e, U+410-44f, U+451, U+45e, U+4c1-4c2, U+4d0-4d3, U+4d6-4d7, U+4dc-4df, U+4e4-4e7, U+4ec-4ed, U+4f0-4f1, U+4f4-4f5, U+4f8-4f9, U+1e26-1e27, U+1e84-1e85, U+1e8c-1e8d, U+1e97, U+2013, U+2019;
+}
+
+
+/* Палитра — из cinemavanya.neocities.org + розовый логотипа и жёлтый из мультяшного мудборда */
+:root {
+  --desk: #aac3cb;
+  --desk-shadow: #8ea9b3;
+  --paper: #fbf6e9;
+  --cream: #f5edcf;
+  --surface: #dde5e3;
+  --ink: #192d3b;
+  --muted: #3b5361;
+  --line: #738e99;
+  --crimson: #a9303e;
+  --scarlet: #ef493e;
+  --pink: #ff9fce;
+  --yellow: #f7cf4a;
+  --cover: #25475c;
+
+  --f-display: "Roboto Condensed", Impact, "Arial Narrow", sans-serif;
+  --f-body: "Golos Text", "Segoe UI", system-ui, sans-serif;
+  --f-hand: "Shantell Sans", "Comic Sans MS", "Segoe Print", cursive;
+
+  --stroke: 3px;
+  --r-l: 26px 8px 8px 22px / 20px 6px 6px 28px;     /* левая страница: скругления «от руки» */
+  --r-r: 8px 26px 22px 8px / 6px 20px 28px 6px;     /* правая */
+  --r-card: 14px 18px 12px 16px / 16px 12px 18px 14px;
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0; overflow: hidden;
+  color: var(--ink);
+  font: 400 16.5px/1.55 var(--f-body);
+  background: var(--desk);
+}
+body::before {                 /* зерно на столе */
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: var(--grain); opacity: .12; mix-blend-mode: multiply;
+}
+button, input, textarea { font: inherit; color: inherit; }
+a { color: inherit; }
+:focus-visible { outline: 3px dashed var(--scarlet); outline-offset: 3px; border-radius: 6px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ───────── Шапка ───────── */
+.bar {
+  position: relative; z-index: 20;
+  height: 60px; display: flex; align-items: center; gap: 16px;
+  padding: 0 clamp(16px, 3vw, 40px);
+}
+.bar__brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 0; }
+.bar__logo { height: 30px; width: auto; display: block; transform: rotate(-3deg); filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff); }
+.bar__title { font: 800 19px/1 var(--f-display); text-transform: uppercase; letter-spacing: .01em; white-space: nowrap; }
+.bar__who { font: 400 19px/1 var(--f-hand); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.spacer { flex: 1; }
+.bar__remind { font: 400 17px/1 var(--f-hand); color: var(--crimson); white-space: nowrap; }
+.bar__count { font: 500 14px/1 var(--f-body); color: var(--muted); white-space: nowrap; }
+.bar__count b { font: 800 19px/1 var(--f-display); color: var(--ink); margin: 0 2px; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 17px;
+  border: 2.5px solid var(--ink); border-radius: 999px;
+  background: var(--cream); color: var(--ink);
+  font: 600 15px/1.1 var(--f-body);
+  cursor: pointer; text-decoration: none; white-space: nowrap;
+  transition: transform .12s, background .12s;
+}
+.pill:hover { transform: translateY(-2px); }
+.pill:active { transform: translateY(0); }
+.pill--ink { background: var(--ink); color: var(--cream); }
+.pill--ghost { background: transparent; }
+.pill--small { padding: 6px 13px; font-size: 14px; border-width: 2px; }
+.pill[disabled] { opacity: .35; cursor: not-allowed; transform: none; }
+.pill .arr { font: 700 17px/1 var(--f-body); color: var(--scarlet); }
+.pill--ink .arr { color: var(--pink); }
+
+/* ───────── Сцена и книга ───────── */
+.stage {
+  position: relative; z-index: 1;
+  height: calc(100dvh - 60px);
+  display: grid; place-items: center;
+  padding: 10px 76px 28px 44px;
+}
+.book {
+  position: relative;
+  --k: 1;                          /* масштаб для больших мониторов, считает JS */
+  width: calc(100% / var(--k)); height: calc(100% / var(--k));
+  max-width: 1760px; max-height: 1000px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  perspective: 2800px;
+  transform: scale(var(--k));
+  transition: transform .9s cubic-bezier(.5,.05,.25,1);
+}
+.book__shadow {
+  position: absolute; inset: 14px -14px -16px 14px; z-index: 0;
+  background: var(--desk-shadow);
+  border-radius: 30px 30px 34px 30px;
+}
+.page, .page-look {
+  position: relative; z-index: 1;
+  background-color: var(--paper);
+  background-image: radial-gradient(circle, rgba(115,142,153,.34) 1.15px, transparent 1.5px);
+  background-size: 22px 22px;
+  background-position: 11px 11px;
+  border: var(--stroke) solid var(--ink);
+  overflow: hidden;
+}
+.page--l, .page-look--l { border-radius: var(--r-l); border-right-width: 1.5px; }
+.page--r, .page-look--r { border-radius: var(--r-r); border-left-width: 1.5px; }
+.page__in {
+  position: absolute; inset: 0;
+  overflow-y: auto; overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+}
+.page--l .page__in, .page-look--l .page__in { padding: 42px 60px 30px 48px; }
+.page--r .page__in, .page-look--r .page__in { padding: 42px 48px 30px 60px; }
+.page__in::-webkit-scrollbar { width: 8px; }
+.page__in::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
+
+/* Спираль */
+.rings {
+  position: absolute; z-index: 7; top: 18px; bottom: 18px; left: 50%;
+  width: 52px; margin-left: -26px; pointer-events: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='52' height='38'><circle cx='9' cy='19' r='3.4' fill='%23192d3b'/><circle cx='43' cy='19' r='3.4' fill='%23192d3b'/><path d='M9 19 C 9 8, 43 8, 43 19' fill='none' stroke='%23192d3b' stroke-width='6.5' stroke-linecap='round'/><path d='M9 19 C 9 8, 43 8, 43 19' fill='none' stroke='%23dde5e3' stroke-width='2.6' stroke-linecap='round'/></svg>") repeat-y center top / 52px 38px;
+}
+
+/* Переворот страницы: старая сторона доворачивается до ребра, новая опускается с ребра.
+   Без backface-visibility и preserve-3d — так одинаково работает в Chrome, Safari и Firefox (Zen). */
+.book .turn { position: absolute; z-index: 5; top: 0; bottom: 0; width: 50%; }
+.book .turn--r { left: 50%; transform-origin: left center; }
+.book .turn--l { left: 0; transform-origin: right center; }
+
+/* Закладки */
+.tabs {
+  position: absolute; z-index: 0; left: 100%; top: 34px;
+  display: flex; flex-direction: column; gap: 4px;
+  margin-left: -3px;
+  transition: opacity .4s .5s;
+}
+.tab {
+  position: relative;
+  display: grid; place-items: center;
+  width: 48px; min-height: 40px; padding: 5px 6px 5px 9px;
+  border: 2.5px solid var(--ink); border-left: 0;
+  border-radius: 0 14px 12px 0 / 0 12px 14px 0;
+  background: var(--surface);
+  font: 800 18px/1 var(--f-display);
+  text-decoration: none;
+  transition: transform .15s, width .15s;
+}
+.tab--lesson { background: var(--cream); }
+.tab--camp { background: var(--pink); }
+.tab.is-locked { background: var(--surface); color: var(--line); }
+.lock p { margin: 0 0 10px; }
+.lock__form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.lock__in { flex: 1 1 180px; min-width: 0; padding: 9px 14px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fff; font: 600 16px/1.2 var(--f-body); }
+.lock__in:focus { outline: 3px dashed var(--scarlet); outline-offset: 2px; }
+.lock__msg { margin: 8px 0 0 !important; font: 400 17px/1.3 var(--f-hand); color: var(--crimson); }
+.lock__msg:empty { display: none; }
+.tab--word { background: var(--yellow); writing-mode: vertical-rl; min-height: 104px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.tab:hover { transform: translateX(4px); }
+.tab.is-active { width: 56px; background: var(--paper); }
+.tab__mark { position: absolute; top: 3px; right: 4px; width: 12px; height: 12px; }
+.tab__mark svg { width: 100%; height: 100%; display: block; }
+
+/* Закрытая книга: видна только обложка. Пока обложка переворачивается, левой страницы ещё нет */
+.book.is-closed { transform: scale(var(--k)) translateX(-25%); }
+.book.is-closed .page--l, .book.is-closed .tabs { visibility: hidden; opacity: 0; }
+.book.is-closed .rings, .book.is-opening .rings, .book.is-closing .rings { z-index: 9; }   /* спираль поверх обложки */
+.book.is-opening .page--l { visibility: hidden; }
+.book.is-closed .book__shadow { left: 50%; }
+.book__shadow { transition: left .5s cubic-bezier(.3,.6,.4,1) .38s; }   /* тень под левой половиной — когда туда ложится страница */
+.book.is-closing .book__shadow { transition: none; }   /* при закрытии левая страница пропадает сразу — и тень вместе с ней, иначе она с задержкой ползёт за книгой тёмным окном */
+
+/* ───────── Обложка ───────── */
+.book .cover__front { z-index: 8; }
+.cover__front {
+  --cover-bg: #25475c; --cover-ink: #f5edcf; --cover-soft: rgba(245,237,207,.8); --pat: rgba(245,237,207,.13); --band: #ef493e;
+  border: var(--stroke) solid var(--ink);
+  border-radius: 10px 30px 28px 10px / 8px 24px 32px 8px;
+  background-color: var(--cover-bg);
+  overflow: hidden;
+  color: var(--cover-ink);
+  cursor: pointer;
+  transition: background-color .35s;
+}
+.cover__front[data-color="scarlet"] { --cover-bg: #ef493e; --pat: rgba(25,45,59,.14); }
+.cover__front[data-color="pink"]   { --cover-bg: #ff9fce; --cover-ink: #192d3b; --cover-soft: rgba(25,45,59,.78); --pat: rgba(25,45,59,.12); }
+.cover__front[data-color="yellow"] { --cover-bg: #f7cf4a; --cover-ink: #192d3b; --cover-soft: rgba(25,45,59,.78); --pat: rgba(25,45,59,.12); }
+.cover__front[data-color="mint"]   { --cover-bg: #9fd3bf; --cover-ink: #192d3b; --cover-soft: rgba(25,45,59,.78); --pat: rgba(25,45,59,.12); }
+.cover__front[data-color="lilac"]  { --cover-bg: #b9a6ea; --cover-ink: #192d3b; --cover-soft: rgba(25,45,59,.78); --pat: rgba(25,45,59,.12); }
+.cover__front::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--grain); opacity: .09; pointer-events: none; }   /* без mix-blend-mode: в Firefox он даёт светлые швы */
+.cover__pattern { position: absolute; inset: 0; pointer-events: none; }
+.cover__front[data-pattern="dots"] .cover__pattern { background: radial-gradient(circle, var(--pat) 2.6px, transparent 3.1px) 0 0 / 28px 28px; }
+.cover__front[data-pattern="stripes"] .cover__pattern { background: repeating-linear-gradient(135deg, var(--pat) 0 12px, transparent 12px 30px); }
+.cover__front[data-pattern="grid"] .cover__pattern { background: linear-gradient(var(--pat) 2px, transparent 2px) 0 0 / 32px 32px, linear-gradient(90deg, var(--pat) 2px, transparent 2px) 0 0 / 32px 32px; }
+.cover__band {
+  position: absolute; top: -4px; bottom: -4px; right: 11%; width: 20px;
+  background: var(--band); border-left: 2.5px solid var(--ink); border-right: 2.5px solid var(--ink);
+}
+.cover__front[data-band="none"] .cover__band { display: none; }
+.cover__front[data-band="pink"]   { --band: #ff9fce; }
+.cover__front[data-band="yellow"] { --band: #f7cf4a; }
+.cover__front[data-band="cream"]  { --band: #f5edcf; }
+.cover__front[data-band="ink"]    { --band: #192d3b; }
+.cover__body { position: absolute; inset: 0; z-index: 2; padding: clamp(28px, 6%, 64px) clamp(26px, 8%, 72px); display: flex; flex-direction: column; }
+.cover__title {
+  margin: auto 0 0; max-width: 8ch;
+  font: 800 clamp(58px, 7.2vw, 128px)/.86 var(--f-display); text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--cover-ink);
+}
+.cover__sub { margin: 16px 0 0; max-width: 20em; font: 400 clamp(17px, 1.5vw, 22px)/1.25 var(--f-hand); color: var(--cover-soft); }
+.cover__row { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: clamp(22px, 4vh, 44px); }
+.owner {
+  display: inline-block; min-width: 240px; max-width: 100%;
+  padding: 10px 16px 12px;
+  background: var(--cream); color: var(--ink);
+  border: 2.5px solid var(--ink); border-radius: 6px 10px 8px 12px / 10px 6px 12px 8px;
+  transform: rotate(-2deg);
+}
+.owner__k { font: 600 11px/1 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--crimson); }
+.owner__name { display: block; min-height: 1.2em; margin-top: 4px; font: 400 26px/1.2 var(--f-hand); white-space: nowrap; overflow: hidden; }
+.owner__input { display: block; width: 100%; margin-top: 2px; border: 0; border-bottom: 2px dashed var(--line); background: transparent; font: 400 25px/1.2 var(--f-hand); padding: 0 0 2px; }
+.owner__input::placeholder { color: var(--line); }
+
+/* Наклейки: и на обложке, и в лотке мастерской */
+.cover__stickers { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.stk { position: absolute; transform: translate(-50%, -50%) rotate(var(--r, 0deg)); user-select: none; -webkit-user-select: none; }
+.stk > svg, .stk > img { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none;
+  filter: drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(3px 4px 0 rgba(9,20,28,.28)); }
+.stk text, .tray text { font-family: var(--f-display); font-weight: 800; }
+.stk .stk-hand, .tray .stk-hand { font-family: var(--f-hand); font-weight: 500; }
+.stk.is-new { animation: stickIn .35s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes stickIn { from { transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(.2); } }
+body.is-customizing .stk { pointer-events: auto; cursor: grab; touch-action: none; }
+body.is-customizing .stk:active { cursor: grabbing; }
+.stk.is-sel::after { content: ""; position: absolute; inset: -10px; border: 2.5px dashed var(--scarlet); border-radius: 12px; pointer-events: none; }
+body.is-customizing .cover__front { cursor: default; }
+body.is-customizing #openBtn { visibility: hidden; }
+
+/* Кнопка и мастерская */
+.custom-btn { position: fixed; z-index: 30; right: clamp(14px, 2.4vw, 32px); bottom: 20px; opacity: 0; pointer-events: none; transform: translateY(10px); transition: opacity .3s, transform .3s; }
+.custom-btn svg { width: 18px; height: 18px; }
+body.is-book-closed .custom-btn { opacity: 1; pointer-events: auto; transform: none; }
+body.is-customizing .custom-btn { opacity: 0; pointer-events: none; }
+.studio {
+  position: fixed; z-index: 40; top: 70px; right: 16px; bottom: 16px; width: min(410px, calc(100vw - 32px));
+  display: flex; flex-direction: column;
+  background-color: var(--paper);
+  background-image: radial-gradient(circle, rgba(115,142,153,.3) 1.15px, transparent 1.5px);
+  background-size: 22px 22px;
+  border: 3px solid var(--ink); border-radius: 8px 22px 20px 8px / 6px 18px 24px 6px;
+  box-shadow: 12px 14px 0 var(--desk-shadow);
+  transform: translateX(calc(100% + 60px));
+  transition: transform .45s cubic-bezier(.3,.8,.2,1);
+}
+body.is-customizing .studio { transform: none; }
+body.is-customizing .book.is-closed { transform: scale(var(--k)) translateX(-46%); }
+.studio__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px 12px; border-bottom: 2px dotted var(--line); }
+.studio__head h2 { margin: 0; font: 800 24px/1 var(--f-display); text-transform: uppercase; }
+.studio__head h2:focus { outline: none; }
+.studio__body { flex: 1; overflow-y: auto; padding: 4px 18px 22px; scrollbar-width: thin; }
+.studio h3 { margin: 20px 0 9px; font: 800 15px/1 var(--f-display); text-transform: uppercase; letter-spacing: .05em; }
+.studio .hint { margin: 10px 0 0; font: 400 16px/1.3 var(--f-hand); color: var(--muted); }
+.swatches { display: flex; flex-wrap: wrap; gap: 9px; }
+.sw { position: relative; width: 38px; height: 38px; padding: 0; border: 2.5px solid var(--ink); border-radius: 50%; background: var(--c); cursor: pointer; }
+.sw--none { background: repeating-linear-gradient(135deg, #fff 0 5px, var(--surface) 5px 10px); }
+.sw[aria-pressed="true"]::after { content: ""; position: absolute; inset: -7px; border: 2.5px dashed var(--ink); border-radius: 50%; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; }
+.chip { padding: 6px 13px; border: 2px solid var(--ink); border-radius: 999px; background: #fff; font: 600 14px/1.1 var(--f-body); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+.name-in { width: 100%; border: 0; border-bottom: 2px dashed var(--line); background: transparent; padding: 4px 0; font: 400 22px/1.2 var(--f-hand); }
+.fonts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+.fontbtn { min-width: 0; padding: 8px 11px 7px; border: 2px solid var(--ink); border-radius: 12px 15px 10px 13px; background: #fff; text-align: left; cursor: pointer; }
+.fontbtn b { display: block; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fontbtn small { display: block; margin-top: 3px; font: 600 10.5px/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); }
+.fontbtn[aria-pressed="true"] { background: var(--yellow); }
+.tray { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.tray button { display: grid; place-items: center; aspect-ratio: 1; padding: 9px; border: 2px solid var(--ink); border-radius: 14px 12px 15px 11px; background: #fff; cursor: pointer; transition: transform .12s; }
+.tray button:hover { background: var(--cream); transform: rotate(-4deg) scale(1.04); }
+.tray button > svg, .tray button > img { width: 100%; height: auto; max-height: 100%; }
+.selbar { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 12px; padding: 11px 12px; border: 2px dashed var(--ink); border-radius: 12px; background: rgba(255,255,255,.6); }
+.selbar .hint { margin: 0; }
+.selbar__k { width: 100%; font: 600 11px/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--crimson); }
+.studio__foot { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; margin-top: 24px; padding-top: 14px; border-top: 2px dotted var(--line); }
+
+/* ───────── Типографика страницы ───────── */
+.eyebrow { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; font: 600 12px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); }
+.eyebrow span + span { padding-left: 12px; border-left: 1.5px solid var(--line); color: var(--muted); }
+.title { margin: 12px 0 0; font: 800 clamp(34px, 3.3vw, 58px)/.95 var(--f-display); text-transform: uppercase; letter-spacing: -.005em; }
+.title:focus { outline: none; }
+.hand { font: 400 21px/1.25 var(--f-hand); color: var(--muted); }
+.sub { margin: 10px 0 0; }
+.sect { margin: 30px 0 8px; font: 800 21px/1.15 var(--f-display); text-transform: uppercase; letter-spacing: .01em; }
+.page__in p { margin: 0 0 12px; max-width: 36em; }
+ul.plain { margin: 6px 0 14px; padding: 0; list-style: none; max-width: 36em; }
+ul.plain li { position: relative; padding-left: 24px; margin: 7px 0; }
+ul.plain li::before { content: ""; position: absolute; left: 3px; top: .62em; width: 9px; height: 9px; border: 2px solid var(--ink); border-radius: 50%; background: var(--pink); }
+ol.steps { counter-reset: s; margin: 8px 0 14px; padding: 0; list-style: none; max-width: 36em; }
+ol.steps li { counter-increment: s; position: relative; padding-left: 36px; margin: 9px 0; }
+ol.steps li::before {
+  content: counter(s); position: absolute; left: 0; top: -1px;
+  width: 25px; height: 25px; display: grid; place-items: center;
+  border: 2px solid var(--ink); border-radius: 50% 46% 52% 48%;
+  background: var(--cream); font: 800 14px/1 var(--f-display);
+}
+.note { display: flex; gap: 8px; align-items: flex-start; margin: 4px 0 16px 6px; max-width: 30em; font: 400 19px/1.25 var(--f-hand); color: var(--muted); transform: rotate(-.8deg); }
+.note svg { flex: none; width: 26px; height: 22px; margin-top: 2px; }
+
+/* Карточки (как на сайте: с кремовым язычком слева) */
+.card {
+  position: relative; max-width: 560px; margin: 16px 0;
+  padding: 12px 18px 14px 30px;
+  background: var(--surface);
+  border: 2.5px solid var(--ink); border-radius: var(--r-card);
+}
+.card::before { content: ""; position: absolute; left: 8px; top: 12px; bottom: 12px; width: 8px; border: 2px solid var(--ink); border-radius: 4px; background: var(--cream); }
+.card__k { font: 600 11.5px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 6px; }
+.card__text { font-size: 16.5px; line-height: 1.5; white-space: pre-wrap; }
+.card__foot { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; align-items: center; margin-top: 10px; }
+.meet { display: grid; grid-template-columns: 120px 1fr; gap: 6px 12px; margin: 0; }
+.meet dt { color: var(--muted); }
+.meet dd { margin: 0; }
+
+/* Видео — нарисованный ноутбук */
+.laptop { display: block; width: min(460px, 100%); margin: 22px 0 6px; text-decoration: none; }
+.laptop svg { display: block; width: 100%; height: auto; overflow: visible; }
+.laptop .play { transform-origin: 200px 104px; transition: transform .2s; }
+a.laptop:hover .play { transform: scale(1.08); }
+.laptop__cap { display: block; margin-top: 4px; font: 400 18px/1.2 var(--f-hand); color: var(--muted); }
+.card--links { background: #fff; }
+.links li { margin: 4px 0; }
+.links a { font-weight: 600; color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; text-decoration-color: var(--scarlet); }
+.links__u { color: var(--muted); font-size: 14px; }
+
+/* Свежее со встречи — подтягивается из живой базы курса */
+.fresh { position: relative; max-width: 560px; margin: 18px 0 20px; padding: 14px 18px 14px 20px; background: #fff; border: 2.5px solid var(--ink); border-radius: var(--r-card); box-shadow: 4px 4px 0 var(--pink); }
+.fresh__top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-bottom: 8px; }
+.fresh__k { font: 800 17px/1.1 var(--f-display); text-transform: uppercase; letter-spacing: .01em; }
+.fresh__date { font: 400 16px/1.2 var(--f-hand); color: var(--muted); }
+.fresh__demo { margin-left: auto; padding: 2px 8px; border: 2px solid var(--ink); border-radius: 6px; background: var(--yellow); font: 700 11px/1.3 var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+.fresh__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.fresh__item { display: grid; gap: 2px; padding-top: 9px; border-top: 1.5px dashed var(--line); font-size: 15.5px; line-height: 1.45; }
+.fresh__item:first-child { padding-top: 0; border-top: 0; }
+.fresh__tag { justify-self: start; padding: 1px 8px; border-radius: 999px; border: 1.5px solid var(--ink); font: 700 11px/1.4 var(--f-body); letter-spacing: .06em; text-transform: uppercase; }
+.fresh__tag--new { background: var(--yellow); }
+.fresh__tag--live { background: var(--pink); }
+.fresh__tag--qa { background: var(--surface); }
+.fresh__tag--fix { background: var(--cream); }
+.fresh__foot { margin-top: 12px; font: 400 16px/1.3 var(--f-hand); color: var(--muted); }
+.fresh__foot a { color: var(--crimson); font-weight: 700; }
+
+/* Вклейка-скриншот */
+.clip {
+  position: relative; width: min(440px, 100%); margin: 26px 0 22px 8px;
+  padding: 10px 10px 38px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 4px 6px 5px 3px;
+  transform: rotate(-1.4deg);
+}
+.clip__tape { position: absolute; top: -13px; width: 88px; height: 24px; border: 2px solid var(--ink); opacity: .92; }
+.clip__tape--a { left: -20px; background: var(--pink); transform: rotate(-24deg); }
+.clip__tape--b { right: -18px; background: var(--yellow); transform: rotate(20deg); }
+.clip__screen { aspect-ratio: 16/9; border: 2px solid var(--ink); border-radius: 3px; overflow: hidden; background: var(--surface); }
+.clip__cap { position: absolute; left: 14px; right: 14px; bottom: 8px; font: 400 17px/1.1 var(--f-hand); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mock { height: 100%; display: flex; flex-direction: column; background: #fff; font: 13px/1.35 var(--f-body); }
+.mock__bar { height: 22px; display: flex; align-items: center; gap: 5px; padding: 0 9px; border-bottom: 2px solid var(--ink); background: var(--cream); }
+.mock__bar i { width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--ink); }
+.mock__body { flex: 1; padding: 12px 14px; display: flex; flex-direction: column; gap: 9px; }
+.mock__me { align-self: flex-end; max-width: 62%; padding: 7px 10px; border: 2px solid var(--ink); border-radius: 12px 12px 3px 12px; background: var(--pink); }
+.mock__shot { height: 54px; margin-bottom: 5px; border: 1.5px solid var(--ink); border-radius: 5px; background: repeating-linear-gradient(135deg, var(--surface) 0 6px, #fff 6px 12px); }
+.mock__line { height: 8px; border-radius: 4px; background: var(--surface); }
+
+/* Конструктор брифа */
+.brief { margin: 12px 0 6px; max-width: 580px; }
+.brief__row { display: grid; grid-template-columns: 170px 1fr; gap: 4px 16px; align-items: start; padding: 9px 0; border-bottom: 2px dotted var(--line); }
+.brief__k { font: 700 15.5px/1.2 var(--f-body); }
+.brief__help { display: block; font-weight: 400; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+.brief__in { width: 100%; min-height: 34px; resize: none; overflow: hidden; border: 0; background: transparent; padding: 2px 0; font: 400 19px/1.3 var(--f-hand); }
+.brief__in::placeholder { color: rgba(115,142,153,.8); }
+.brief__empty { color: var(--muted); font-style: italic; }
+
+/* ───────── Задачи ───────── */
+.tasks-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 6px; }
+.tasks-head .title { margin: 0; font-size: clamp(30px, 2.6vw, 44px); }
+.task {
+  position: relative;
+  margin: 18px 0 22px;
+  padding: 16px 20px 18px;
+  background: #fff;
+  border: 2.5px solid var(--ink); border-radius: var(--r-card);
+  transition: background .3s;
+}
+.task.is-done { background: var(--cream); }
+.task__top { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.box {
+  position: relative; flex: none; width: 32px; height: 32px; padding: 0;
+  border: 2.5px solid var(--ink); border-radius: 9px 6px 10px 7px;
+  background: #fff; cursor: pointer;
+}
+.box svg { position: absolute; left: -4px; top: -10px; width: 46px; height: 44px; overflow: visible; pointer-events: none; }
+.box path { fill: none; stroke: var(--ink); stroke-width: 4.2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 70; stroke-dashoffset: 70; transition: stroke-dashoffset .35s ease .1s; }
+.task.is-done .box path { stroke-dashoffset: 0; }
+.task__id { font: 800 20px/1 var(--f-display); color: var(--muted); }
+.star {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 10px 4px 7px;
+  border: 2px solid var(--ink); border-radius: 999px;
+  background: var(--yellow);
+  font: 700 11.5px/1 var(--f-body); letter-spacing: .1em; text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+.star svg { width: 14px; height: 14px; }
+.quote { margin: 4px 0 2px; font: 400 20px/1.2 var(--f-hand); color: var(--muted); }
+.task__title { margin: 0 0 8px; font: 700 19px/1.32 var(--f-body); max-width: 32em; }
+.strike {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'><path d='M2 12 C 30 5, 62 17, 96 10 S 160 15, 202 9 S 262 15, 298 10' fill='none' stroke='%23192d3b' stroke-width='3.4' stroke-linecap='round' vector-effect='non-scaling-stroke'/></svg>");
+  background-repeat: no-repeat; background-position: 0 60%; background-size: 0% .8em;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  transition: background-size .55s cubic-bezier(.6,.05,.3,1), color .3s;
+}
+.task.is-done .strike { background-size: 100% .8em; color: var(--muted); }
+.task.is-done .quote { opacity: .55; }
+.task details { margin: 10px 0; max-width: 34em; }
+.task summary { cursor: pointer; list-style: none; font: 400 19px/1.2 var(--f-hand); color: var(--muted); }
+.task summary::-webkit-details-marker { display: none; }
+.task summary::before { content: "→ "; color: var(--scarlet); }
+.task details[open] summary::before { content: "↓ "; }
+.task details p { margin: 6px 0 0; color: var(--muted); }
+.answer { margin-top: 12px; }
+.answer__k { font: 600 11.5px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); }
+.lined {
+  display: block; width: 100%; min-height: 90px; margin-top: 4px;
+  resize: none; overflow: hidden; border: 0; padding: 0 2px;
+  background: repeating-linear-gradient(transparent 0 29px, rgba(115,142,153,.55) 29px 30px);
+  background-attachment: local;
+  font: 400 19px/30px var(--f-hand);
+}
+.lined::placeholder { color: rgba(115,142,153,.85); }
+.linkin { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; }
+.linkin input { flex: 1; min-width: 0; border: 0; border-bottom: 2px dashed var(--line); background: transparent; padding: 3px 0; font-size: 15.5px; }
+.task__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 14px; }
+.task__lock { font: 400 16px/1.15 var(--f-hand); color: var(--line); }
+.linkbtn { border: 0; background: none; padding: 4px 2px; cursor: pointer; font: 600 14.5px/1 var(--f-body); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--pink); }
+.linkbtn[disabled] { opacity: .4; cursor: not-allowed; }
+.solution {
+  margin-top: 14px; padding: 12px 16px 10px;
+  background: var(--surface); border: 2px dashed var(--ink); border-radius: 12px;
+}
+.solution h4 { margin: 0 0 6px; font: 800 15px/1 var(--f-display); text-transform: uppercase; letter-spacing: .03em; }
+.solution p { margin: 0 0 8px; }
+.solution ul { margin: 4px 0; padding-left: 18px; }
+.solution li { margin: 4px 0; }
+
+/* Искорки, когда задача вычеркнута */
+.pop { position: absolute; width: 20px; height: 20px; pointer-events: none; animation: pop .7s ease-out both; }
+@keyframes pop { 0% { transform: scale(0) rotate(0); opacity: 1; } 60% { transform: scale(1.15) rotate(20deg); opacity: 1; } 100% { transform: scale(.6) rotate(40deg); opacity: 0; } }
+
+/* Пометки проверяющего — жёлтый стикер */
+.postit {
+  float: right; position: relative; z-index: 2;
+  width: 44%; max-width: 220px; margin: -4px -10px 10px 16px;
+  padding: 10px 12px 12px;
+  background: var(--yellow);
+  border: 2.5px solid var(--ink); border-radius: 3px 4px 14px 3px;
+  transform: rotate(2.5deg);
+}
+.postit__who { font: 600 10.5px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); opacity: .7; }
+.stamp {
+  display: inline-block; margin: 6px 0 4px;
+  padding: 3px 9px 2px;
+  border: 3px solid var(--scarlet); border-radius: 8px 6px 9px 7px;
+  font: 800 17px/1 var(--f-display); text-transform: uppercase; letter-spacing: .04em;
+  color: var(--scarlet); transform: rotate(-6deg);
+}
+.stamp--revise { border-style: dashed; }
+.postit__text { font: 400 17px/1.2 var(--f-hand); color: var(--crimson); white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* ───────── Маршрут: остров ───────── */
+.island { display: block; width: 100%; max-width: 660px; height: auto; margin: 4px 0 0; overflow: visible; }
+.island .land { fill: #dde5e3; stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; }
+.island .shore { fill: none; stroke: var(--ink); stroke-width: 1.6; opacity: .4; }
+.island .wave { fill: none; stroke: var(--line); stroke-width: 2.4; stroke-linecap: round; }
+.island .deco { stroke: var(--ink); stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
+.island .route { fill: none; stroke: var(--ink); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
+.island .walked { fill: none; stroke: var(--scarlet); stroke-width: 5; stroke-linecap: round; }
+.island .lbl { font: 400 18px var(--f-hand); fill: var(--muted); }
+.island .big { font: 800 17px var(--f-display); fill: var(--ink); }
+.island a { cursor: pointer; }
+.island .stop { fill: var(--cream); stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; transition: fill .2s; }
+.island .is-done .stop { fill: var(--ink); }
+.island .is-acc .stop { fill: var(--scarlet); }
+.island .n { font: 800 15px var(--f-display); fill: var(--ink); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.island .is-done .n, .island .is-acc .n { fill: var(--cream); }
+.island a:hover .stop { fill: var(--pink); }
+.island a:focus-visible { outline: none; }
+.island a:focus-visible .stop { stroke: var(--scarlet); stroke-width: 4; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0 0; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend svg { width: 20px; height: 20px; overflow: visible; }
+
+.route-list { list-style: none; margin: 14px 0 0; padding: 0; max-width: 560px; }
+.route-list li { position: relative; }
+.route-list li:not(:last-child)::after { content: ""; position: absolute; left: 18.5px; top: 44px; bottom: -6px; border-left: 3px dotted var(--ink); }
+.route-list li.is-walked:not(:last-child)::after { border-left: 4px solid var(--scarlet); left: 18px; }
+.route-list a { display: grid; grid-template-columns: 40px 1fr auto; gap: 14px; align-items: start; padding: 6px 0 12px; text-decoration: none; }
+.route-list a:hover .rl__t { text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.rl__stop { width: 40px; height: 40px; overflow: visible; }
+.rl__stop .stop { fill: var(--cream); stroke: var(--ink); stroke-width: 3; stroke-linejoin: round; }
+.rl__stop.is-done .stop { fill: var(--ink); }
+.rl__stop.is-acc .stop { fill: var(--scarlet); }
+.rl__stop text { font: 800 15px var(--f-display); fill: var(--ink); text-anchor: middle; dominant-baseline: central; }
+.rl__stop.is-done text, .rl__stop.is-acc text { fill: var(--cream); }
+.rl__t { display: block; padding-top: 5px; font: 800 18px/1.15 var(--f-display); text-transform: uppercase; }
+.rl__k { display: block; font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+.minis { display: flex; gap: 4px; padding-top: 9px; }
+.mini { width: 14px; height: 14px; border: 2px solid var(--ink); border-radius: 3px 2px 4px 2px; background: #fff; }
+.mini.is-main { background: var(--yellow); }
+.mini.is-done { background: var(--ink); }
+.mini.is-acc { background: var(--scarlet); }
+.mini.is-rev { border-style: dashed; border-color: var(--scarlet); }
+
+.letter { position: relative; max-width: 380px; margin: 22px 0 6px 8px; padding: 14px 18px 16px; background: var(--yellow); border: 2.5px solid var(--ink); border-radius: 3px 4px 16px 3px; transform: rotate(-1.5deg); }
+.letter .postit__text { font-size: 20px; margin-top: 6px; }
+
+/* ───────── Кармашек ───────── */
+.pocket-card { position: relative; margin: 0 0 18px; padding: 16px 20px 16px 30px; background: var(--surface); border: 2.5px solid var(--ink); border-radius: var(--r-card); }
+.pocket-card:nth-child(2) { transform: rotate(-.8deg); background: var(--cream); }
+.pocket-card:nth-child(3) { transform: rotate(.7deg); }
+.pocket-card::before { content: ""; position: absolute; left: 8px; top: 14px; bottom: 14px; width: 8px; border: 2px solid var(--ink); border-radius: 4px; background: var(--pink); }
+.pocket-card h3 { margin: 0 0 6px; font: 800 20px/1.1 var(--f-display); text-transform: uppercase; }
+.pocket-card p { margin: 0 0 12px; }
+.status { display: block; margin-top: 10px; font: 400 17px/1.1 var(--f-hand); color: var(--muted); }
+
+/* Низ страницы: соседние главы */
+.pnav { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-top: 34px; padding-top: 14px; border-top: 2px dotted var(--line); }
+.pnav a { text-decoration: none; max-width: 70%; }
+.pnav small { display: block; font: 600 11px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 4px; }
+.pnav span { font: 800 17px/1.15 var(--f-display); text-transform: uppercase; }
+.pnav a:hover span { text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 3px; }
+.pnav .folio { font: 400 16px/1 var(--f-hand); color: var(--line); white-space: nowrap; text-transform: none; }
+.pnav--r a { text-align: right; margin-left: auto; }
+.soon { margin: 22px 0 0; max-width: 30em; font: 400 20px/1.3 var(--f-hand); color: var(--muted); }
+
+/* Всплывающая реплика */
+.toast {
+  position: fixed; left: 50%; bottom: 22px; z-index: 60;
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 11px 18px;
+  background: var(--cream); border: 2.5px solid var(--ink); border-radius: 18px 18px 18px 4px;
+  font: 500 15.5px/1.35 var(--f-body);
+  transform: translate(-50%, 16px); opacity: 0;
+  transition: opacity .2s, transform .2s; pointer-events: none;
+}
+.toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+.toast--bad { background: var(--pink); }
+.warn-storage { position: fixed; z-index: 70; left: 0; right: 0; top: 0; padding: 10px 16px; background: var(--scarlet); color: #fff; font-size: 15px; text-align: center; }
+
+/* ───────── Сайт: вход и «сохранено» ───────── */
+.bar__sync { display: inline-flex; align-items: center; gap: 7px; font: 400 17px/1 var(--f-hand); color: var(--muted); white-space: nowrap; }
+.bar__sync i { flex: none; width: 11px; height: 11px; border: 2px solid var(--ink); border-radius: 50%; background: #9fd3bf; }
+.bar__sync[data-s="saving"] i { background: var(--yellow); }
+.bar__sync[data-s="offline"], .bar__sync[data-s="error"] { color: var(--crimson); }
+.bar__sync[data-s="offline"] i, .bar__sync[data-s="error"] i { background: var(--scarlet); }
+.login {
+  display: block; width: min(460px, 100%); margin-top: clamp(22px, 4vh, 44px);
+  padding: 12px 16px 14px; background: var(--cream); color: var(--ink);
+  border: 2.5px solid var(--ink); border-radius: 6px 10px 8px 12px / 10px 6px 12px 8px;
+  transform: rotate(-1.2deg); cursor: default;
+}
+.login__row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 9px; }
+.login__in { flex: 1 1 120px; min-width: 0; padding: 8px 14px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fff; font: 600 16px/1.2 var(--f-body); }
+.login__in:focus { outline: 3px dashed var(--scarlet); outline-offset: 2px; }
+.login__msg { margin: 9px 0 0; font: 400 17px/1.3 var(--f-hand); color: var(--crimson); }
+.login__msg:empty { display: none; }
+body.is-auth-wait .book, body.is-auth-wait .custom-btn { visibility: hidden; }
+body.is-logged-out .cover__row, body.is-logged-out .custom-btn { display: none; }
+body.is-logged-out .cover__front { cursor: default; }
+body.is-logged-out .cover__stickers { z-index: 1; }      /* до входа наклейки не лезут на форму */
+@media not all and (min-width: 900px) and (min-aspect-ratio: 1/1) { body.is-book-closed .toast { bottom: 78px; } }   /* над «Кастомизировать» */
+
+/* ───────── Одна страница: телефон и узкие окна ───────── */
+@media not all and (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  .bar { height: 52px; gap: 10px; padding: 0 14px; }
+  .bar__logo { height: 20px; }
+  .bar__title, .bar__who, .bar__remind { display: none; }
+  .bar__sync span { display: none; }
+  .bar__sync[data-s="offline"] span, .bar__sync[data-s="error"] span { display: inline; font-size: 15px; }
+  .bar__count span { display: none; }
+  .bar .pill { padding: 7px 13px; font-size: 14px; }
+  .bar .pill .long { display: none; }
+  .stage { height: calc(100dvh - 52px); padding: 50px 12px 14px 24px; }
+  .book { grid-template-columns: 1fr; max-height: none; }
+  .book.is-closed { transform: scale(var(--k)); }
+  .book__shadow { inset: 8px -6px -8px 6px; }
+  .book.is-closed .book__shadow { left: 6px; }
+  .page--l { display: none; }
+  .page--r, .page-look--r, .page-look--l { border-radius: 6px 20px 18px 6px / 6px 16px 22px 6px; border-width: var(--stroke); }
+  .page--r .page__in, .page-look--r .page__in, .page-look--l .page__in { padding: 26px 18px 22px 34px; }
+  .rings { left: 0; margin-left: -20px; width: 40px; background-size: 40px 30px; }
+  .book .turn { width: 100%; left: 0; transform-origin: left center; }
+  .tabs {
+    left: 0; right: 0; top: -44px; margin: 0; z-index: 0;
+    flex-direction: row; gap: 4px; overflow-x: auto; scrollbar-width: none;
+    padding: 0 4px;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex: none; width: auto; min-width: 40px; min-height: 42px; border: 2.5px solid var(--ink); border-bottom: 0; border-radius: 12px 14px 0 0; padding: 6px 10px 8px; }
+  .tab--word { writing-mode: horizontal-tb; min-height: 42px; font-size: 13px; }
+  .tab:hover { transform: none; }
+  .tab.is-active { width: auto; transform: translateY(3px); }
+  .cover__front { border-radius: 6px 20px 18px 6px / 6px 16px 22px 6px; }
+  .studio { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; height: 55dvh; box-shadow: none; transform: translateY(calc(100% + 40px)); }
+  body.is-customizing .stage { padding-top: 8px; }
+  body.is-customizing .book.is-closed { transform: scale(.36); transform-origin: 50% 0; }   /* вся обложка над панелью */
+  .tray { grid-template-columns: repeat(5, 1fr); }
+  .brief__row { grid-template-columns: 1fr; }
+  .meet { grid-template-columns: 1fr; gap: 0; }
+  .meet dd { margin-bottom: 8px; }
+  .postit { width: 52%; margin-right: -6px; }
+  .task { padding: 14px 14px 16px; }
+}
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) { .bar .pill .short { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="bar__brand" href="#/map" aria-label="К маршруту">
+    <img class="bar__logo" src="assets/logo.webp" alt="синемаваня">
+    <span class="bar__title" id="barTitle"></span>
+  </a>
+  <span class="bar__who" id="who"></span>
+  <span class="spacer"></span>
+  <span class="bar__remind" id="remind" hidden></span>
+  <span class="bar__sync" id="sync" role="status" hidden><i aria-hidden="true"></i><span></span></span>
+  <span class="bar__count" id="count"></span>
+  <button class="pill pill--ink" id="saveTop" type="button"><span class="long">Сохранить для проверки</span><span class="short">Сохранить</span></button>
+</header>
+
+<main class="stage">
+  <div class="book is-closed" id="book">
+    <div class="book__shadow" aria-hidden="true"></div>
+    <section class="page page--l" aria-label="Левая страница"><div class="page__in" id="pageL"></div></section>
+    <section class="page page--r" aria-label="Правая страница"><div class="page__in" id="pageR"></div></section>
+    <div class="rings" aria-hidden="true"></div>
+    <nav class="tabs" id="tabs" aria-label="Главы блокнота"></nav>
+
+    <div class="turn turn--r cover__front" id="cover" hidden>
+      <div class="cover__pattern" aria-hidden="true"></div>
+      <div class="cover__band" aria-hidden="true"></div>
+      <div class="cover__body">
+        <h1 class="cover__title" id="coverTitle"></h1>
+        <p class="cover__sub" id="coverSub"></p>
+        <div class="cover__row">
+          <div class="owner">
+            <div class="owner__k">Владелец блокнота</div>
+            <div id="ownerSlot"></div>
+          </div>
+          <button class="pill" id="openBtn" type="button">Открыть блокнот <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+        <form class="login" id="login" hidden>
+          <div class="owner__k">Вход в блокнот</div>
+          <div class="login__row">
+            <input class="login__in" id="loginIn" type="text" name="username" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="логин" aria-label="Логин">
+            <input class="login__in" id="passIn" type="password" name="password" autocomplete="current-password" placeholder="пароль" aria-label="Пароль">
+            <button class="pill pill--ink" id="loginBtn" type="submit">Войти <span class="arr" aria-hidden="true">→</span></button>
+          </div>
+          <p class="login__msg" id="loginMsg" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="cover__stickers" id="stickers"></div>
+    </div>
+  </div>
+</main>
+
+<button class="pill custom-btn" id="customBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0 C 13 8, 16 11, 24 12 C 16 13, 13 16, 12 24 C 11 16, 8 13, 0 12 C 8 11, 11 8, 12 0 Z" fill="#ff9fce" stroke="#192d3b" stroke-width="1.6"/></svg>Кастомизировать</button>
+<aside class="studio" id="studio" aria-label="Мастерская обложки" inert>
+  <div class="studio__head"><h2 tabindex="-1">Мастерская</h2><button class="pill pill--ink pill--small" id="studioDone" type="button">Готово</button></div>
+  <div class="studio__body" id="studioBody"></div>
+</aside>
+
+<input type="file" id="fileIn" accept=".json,application/json" class="sr" tabindex="-1">
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="storageWarn"></div>
+
+<script src="assets/fb.js"></script>
+<script>window.CLOUD = {"config": {"apiKey": "AIzaSyCqfPCYG5S8Wz4Adt9cOo0gyOeDmQxrw2c", "authDomain": "vsmysle-22ee3.firebaseapp.com", "projectId": "vsmysle-22ee3", "storageBucket": "vsmysle-22ee3.firebasestorage.app", "messagingSenderId": "968236200356", "appId": "1:968236200356:web:dd0acbbd0f3ed89753d131"}, "domain": "vsmysle.ru", "emuProject": "demo-vsmysle", "desk": "stol/", "sw": "sw.js"};</script>
+<script>
+window.COURSE = {"id": "vsmysle-pilot", "version": "прототип 0.4 · пилот", "title": "В смысле сложно?", "subtitle": "Как сделать ИИ своим личным помощником, даже если ты в нём ничего не понимаешь", "routeTitle": "Четыре недели, девять стоянок", "author": {"name": "Ваня Григоренко", "short": "Ваня", "dative": "Ване", "telegram": "cinemavanya"}, "base": {"url": "https://cinemavanya.github.io/vsmysle-base/base.json", "link": "https://cinemavanya.github.io/vsmysle-base/"}, "chapters": [{"n": 0, "kind": "meet", "week": 1, "title": "Знакомство", "short": "Как устроены четыре недели", "meeting": {"when": "Понедельник, 19:00 · Телемост, ссылка в чате группы", "length": "30 минут", "bring": "Компьютер с интернетом. Камера — по желанию."}, "body": [{"t": "h", "text": "Зачем мы здесь"}, {"t": "p", "text": "За месяц ИИ станет твоим **личным помощником** в повседневных делах: будет разбирать документы и файлы, превращать поток мыслей в план, помнить твои проекты и по утрам сам присылать, что сегодня важно."}, {"t": "p", "text": "Разбираться в технологиях для этого не нужно. Работать с ИИ — как с толковым помощником: **поставить задачу, дать контекст, проверить результат**. Этому и учимся."}, {"t": "aside", "text": "Сайт и своё приложение тоже будут. Не потому, что ты станешь программистом, — а чтобы убедиться: это не так страшно, как звучит."}, {"t": "h", "text": "Как устроен курс"}, {"t": "list", "items": ["Четыре недели, восемь живых встреч в Телемосте.", "**Вторник, 19:00–20:30** — урок: основа и первый шаг вместе.", "**Суббота, 14:00–17:00** — практика: разбираем сделанное за неделю и делаем новое.", "Каждая глава открывается словом — его называют в конце предыдущей встречи. Пропустил встречу — слово лежит в «Объявлениях».", "Встречи записываются, запись появляется в главе. Там же — «Свежее со встречи»: что поменялось и что попробовали вживую."]}, {"t": "p", "text": "**Оценок нет.** Задачи — чтобы попробовать руками. Ваня смотрит домашку и оставляет пометки на полях. Главная задача в каждой главе отмечена звездой — начни с неё."}, {"t": "p", "text": "Блокнот остаётся у тебя и после курса: в каждой главе тезисы, заготовки и ссылки на программы — чтобы было к чему вернуться."}, {"t": "h", "text": "Как устроен наш чат"}, {"t": "list", "items": ["**Объявления** — пишет только Ваня: ссылки на встречи, слова к главам, напоминания.", "**Помогите** — застрял? Пиши по форме: скриншот + что делал + что ожидал.", "**Галерея** — обложки, сайты, приложения, удачные ответы. Хвастаться можно и нужно.", "**Болталка** — всё остальное: находки, вопросы не по заданию, мемы."]}, {"t": "aside", "text": "Форма «скриншот + что делал + что ожидал» — тот же бриф, которому научимся во вторник. Только для людей."}, {"t": "list", "items": ["Прежде чем писать в «Помогите», покажи тот же скриншот ChatGPT — часто он справляется сам.", "Решилось — напиши, что помогло: следующему пригодится.", "Никаких паролей, ключей, номеров карт и чужих данных — даже на скриншотах. Замазывай.", "Не получается больше 15 минут — не мучайся, пиши."]}], "links": [{"t": "ChatGPT для компьютера", "u": "https://chatgpt.com/download"}, {"t": "Яндекс Телемост", "u": "https://telemost.yandex.ru/"}], "tasks": [{"id": "0.1", "main": true, "quote": "Хочу, чтобы было моё", "title": "Оформи обложку блокнота и покажи её в галерее", "steps": ["Закрой блокнот — стрелкой ← с маршрута или ссылкой «Закрыть блокнот».", "Нажми «Кастомизировать» справа внизу.", "Выбери цвет, узор и резинку, впиши имя, наклей наклейки.", "Сделай скриншот обложки и выложи его в «Галерею»."], "hint": "Наклейки можно тащить, крутить и увеличивать. Стрелки на клавиатуре двигают выбранную, Delete — отклеивает.", "result": {"link": false, "placeholder": "Что получилось на обложке"}}]}, {"n": 1, "kind": "lesson", "week": 1, "title": "Как с ней разговаривать", "short": "Бриф вместо промпта", "tasks": [{"id": "1.1", "main": true}, {"id": "1.2"}, {"id": "1.3"}], "lock": {"v": 1, "iv": "pjiy+yq50TAMxxdA", "data": "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"}}, {"n": 2, "kind": "workshop", "week": 1, "title": "В смысле сложно?", "short": "Снаряжение и первый сайт", "tasks": [{"id": "2.1", "main": true}, {"id": "2.2"}, {"id": "2.3"}, {"id": "2.4"}], "lock": {"v": 1, "iv": "pHyYyjJCqtcLZNQW", "data": "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"}}, {"n": 3, "kind": "lesson", "week": 2, "title": "Голос вместо клавиатуры", "short": "Диктовка и расшифровка", "tasks": [{"id": "3.1", "main": true}, {"id": "3.2"}, {"id": "3.3"}], "lock": {"v": 1, "iv": "tK8+4POx2YSRoVZf", "data": "dJDRgrn0Q+Ks+zwK7VjFrIs+HtE1HLOgrqADz0o0GRM47m/VdivuL1ppv71ZEZLkierxwHmIoEue/s49QdduY4wMTH2ppKGfkURmGWg7SW2iBpYu1hOxvtk5QFFFYG8jL9IXz+MdEnQ30E+UwhmU2U6MeL/IO0/kGANXT1GvuqgCdUDFyx+yy5C1e8VsQVAqvRqaLdxQDegI1XYgLck8altt6ce9N+PS510Xa7K7d0cO/oCYyveqsF19gU1Z7RvZOjG/rn2NTdptvOjK9utYDp9AKivig7+9kWOYGUyDrCWFDiMmI5qROoNo8oArd9A7sVXOApV2vgr0YfsdWPIGwHENueQunEhAqoGW5guAYBVXOf1C+2WyYHFuR0EPUPuPVQmfakm4XSjw30/D8WUzaDnLYxVzxaAitLbOIWHURWC1Ah/SoJHcraUXEQnepoGQ1XIo0XgC9noPGDqd8RbloHAtMTL9Epw6N/ZoLaOtC7Woa7acXFLSBwiYSA7Mpor8oN5q7X8apTCbDKDOiMBR8zBWcWUFAFuR5+jMIw62A94wLs1JIamdVYGj05/gFS/KOTMI/9pvrrA83mENyHzB6FMJHxz5IQ64WNgU6pJytqN9WupxnJSyVDpjaVPfIK5KlhIt9Jsto1PyrFesX3qbqlqz6ShpI5vP1rzUqp5ABBpReTntn4ZdGUdZxar/j3cSJRbt47bF4qXWy5KG09DdoK2oHGAX23X9ZrUBvIMyykI99JAGaJQtPye5Tu86zi5O27yQOUYh2TiGg/kj47xTm3/0MnCzto4YF+dGO5VJGo4nNnlOLBVcvjYVWMjitnb84ED/LiGnNY9cMgDj1aP+WfIZYCcdozM2R/QiwdKsosmC0IipXJFRRioCxMxOYndxtzLJVbOa/8A9sGE7fiCFLAP30/AZxckZdBJuOnWPyqpW+ORAkY554ffoJGRLIlBTRv8hJr+LWhZVdsIOT/GFf8oUryjHfVOoMNdZvlj32KYiGH+Lup2hcsP8Zm28JKBZIn9Nb/sc7Qot5fDUnu0dJUzeCE2z+mFGiCxVBmPO8iv7+JsJqMge9X+BsA1MxHKmavn8KS3Cc2t7YxIbpf4hyK9wOhKopfKpSWPV+EjOPdN8yZuUlN9maTOL6XA="}}, {"n": 4, "kind": "workshop", "week": 2, "title": "Память", "short": "Проекты и второй мозг", "tasks": [{"id": "4.1", "main": true}, {"id": "4.2"}, {"id": "4.3"}, {"id": "4.4"}], "lock": {"v": 1, "iv": "ywpUJqva/ccA4LU1", "data": "SXhi0CcpYIinEVbvaabE4uDgChDaRcdt1XRjDSzjghXx+Ua/f+tqjzx5HMr1hZZVPMtZS/iHM8AsVZH3yu8Ypt7jHfHLe0izrrlo8+kekJDJ/Fq7k5RRZ61b6SuVL+uuQQzQpvP/tJoEeIFge0DYzzT835EfTg/H33S73Iu9PGRQw3iYPayG/rVquRRqNgFUFoyFkuTFXo6spfZ8wMfmKyW3CTb1GAXPmJAkL3JWe14YtlAMvzuDFBI4w5ADQIIBjcQDngmgEDAQeQpC4Lmvs+o8j+LTYM6iuNK7lE525DG52NkbnrIZDtt3nhfU1O8f7hV2l5hh0A7KkubUjso9G4K+xPjM2756vSekUdP062dY2jtAQbJlTjp9+GU+cbI8LFMFBZ0/vqPPOY3EVrZHC9qGnZdbe15UKKM272J6ZsobeGRSV1GIvWk0wjFuLEG5DssZ6oAKuNYlRoJH/TOCGJrrE1gHtP7eg/qnvzMbOtbGJ9tAzWT7ppvOVoYkv45/r2GAr8RUU7VKhFiRfDyZe5/9TmwQ+c9QPGnDEZ38ddM/u8TdGDdUZ4PLARlRTJADGKH3wrAmpd32vj5sqsKMJ62y3czqU8EVPFGhTl5KODqr8KKO1FE5zq4nNOcJ0n7DmmBAxEzLUWLhk2VZ882GMIulE2Qdyk048aH24nXU0yk56sK6UHOfrcE6UdBnj6BfHoeOXT/Ty4CravUEgNrdikJKIZ+kIvW5gPX50b62vrRIzUHlWxnYNEFRcugx6lvrNqYoi7I6GaWtL8Qsh0aZzJ2myHXO6B+ajlEQyJVHOKH7wMgatGs+hjcXUvmGLpPGIndDaFp00Pw7A2Mpl4Nig42EuGR+6c6o2jz104M02r4H0UyNm3uYF/7/kdeLVc4nOwL+lka6DBDutMzTESXzT2TGgyyNv+JEmytS6qX5+Ik="}}, {"n": 5, "kind": "lesson", "week": 3, "title": "Оживить идею", "short": "Одностраничник, который решает проблему", "tasks": [{"id": "5.1", "main": true}, {"id": "5.2"}, {"id": "5.3"}], "lock": {"v": 1, "iv": "kuPos1Bx2aO394Zz", "data": "XS1iJ7TJb/RbNU3ZGDVHgGSRUPG1RWAIBR0Vn0Qs77ePcUdvuT+vPD1nKsLkc15XriaX9CdLB6pIsXrMgE+9T9THsZfYtxCwbLXoIw/HPhamBhLFypNGf05OrT8ngh8u4y0oP91avwvbfZI39pxlBBfHW17LfyTiIuQzvzPeK5NvXfd7Q5dFPs60//o/fPrdV2MXsMFnHoS9wVyYeYluiJJjF7Xx5GtOWm2U6JDDxnrpIquYpdjKwRbawJvBQWOUaeuTMXnuB67JzITC3vSXvn+5+N+GYufEncVJ88upIlgjh8THB6RGZGNrhJtmZ1vHYO+qaZeGb+rhIPmhYfwDUoiBMPDwa0zXT0berAC/SYvls/NHxkTlIr2TwD+AnVay3USSuyX9Ld96qpN7uv19WTZi9EF/VdfLNLqO4gR+OHEMPEKsrluFZP1odxW1iWun1+dGu0ZnyXO9txyprb33rlmUhhkOcEJEyPR57e4V7bbWvWMFysUXAccsA68CmNcU+8xrt64M19CLXHuSbQJ7ovGWK6YbC+3Cryd7aTyf/EowP/Hq++51g50gk0rt5czd9nr4XBrILxEkdmoJh2TlOKjOV2B9c8aCJA=="}}, {"n": 6, "kind": "workshop", "week": 3, "title": "Своё приложение", "short": "Одностраничник становится веб-приложением", "tasks": [{"id": "6.1", "main": true}, {"id": "6.2"}, {"id": "6.3"}, {"id": "6.4"}], "lock": {"v": 1, "iv": "ii7JLmHqrrImmvps", "data": "FxDnGLZg5+2n1C4ViEjEIyH64cgqDm3QeG7IhDFhHIhXtBSROnRmlFXXFHl7bg+QnBdEy0+GfCQoWbGvqUOrKcI2qCCu1u8kX/4YI1f9aRdkqF1FCrPfVHMbNgIqPg5fjBVPh/aNXTmKx6TfVbrlnnGlG6PR+cQYhMSU+UAa26KX7/NISDVweNaloX/nZXEDm6iWzSiy2adTTgrF+G6T+WTKYBkfUc6jPTsedUHv0leIthxCnqurtfUvfBTReGYmAgpzgBSeH12eHdKCjppgGvSFG2/u9E92lLvQGjYvW+gu8X6tc9yBDIKzIu9zr0Lr7SWvX32bYZI4CLiyPDZDwK99SZK4ttURy0TF7NjTr/l8qc8xgvjwZOh6G9FsaEQtH8CUHYLW8l6bygpSXuyAcxw7EfUkXQ35hzp5NjHQg4ycBraJxUAJcaFB15zcrJcIYwb5dn3wLlb5WgRbOs5lW56XfkTNLbiz7PBvWCqWqjskZmgks9fpcjUovmzkQzQZ8MMWy5g1qf4mUBFFdAdrFER4Wd0o9qn9+8Ne3nsCi4fKWTjnmEqiZLX5U0ZepSrDGOLxMxOqGGzzp9sP7DCvgpirv6FY33m9zW1cp5zNuHSF4qY3mc2o+ZdUctAcj3FfcA7BGtdxhUc0OmcNBr63YIwsUKoKmFs0lTL+I1sANAGqfHL6Yy7f7yzOPan14SlrcVOrXo7uBvs5INPucVMru4Kqg4Aix1XUgi2ZkGPRUC4vmwFHDHOLup+g9C8WAD55si4IrUzGwya3C7z3kC4cJlMJ2/ueiAKAjelUlEDiYnvhEKgk5XFevZWJ+AdF4y+RFNkbFDvjFnwHeu0xdvc9SByJLsPXDGbtg75fzHk71xpcql8Wlwv+RRP70GKPE6RiPQ7HQa3H5MmSde9ZOe4xbTUbwU4SvCK0IHvPOT7Z/7DWFiBtskl3"}}, {"n": 7, "kind": "lesson", "week": 4, "title": "Пусть работает без тебя", "short": "Постоянные задачи и скиллы", "tasks": [{"id": "7.1", "main": true}, {"id": "7.2"}, {"id": "7.3"}], "lock": {"v": 1, "iv": "ntaqfENzwGcyqEka", "data": "aOlvZ8/SSCvZ8bNuMKBpmlPdqScgnK0jGeb+Th9MdvQXTCm4FqgDjxGp1uB86ZvGdL0U9US3l2CMPccM4c4OGQ/Cvw95VuedvjcogdtdXrqpgQqUdHk8LlbbMoTvBkVh0/KmW7+DAMgEUZgn4xL3kt1cZs3c8cxdkDM4dYOjPOSlLozRRUzUdhDt/1jRBE7RWtGN9BQTKks2cRDz5JTe/93PM/kxeBgSifuUTj1gbf9n5DD0NWOxREIOh/V8TA8qP6YeJrTU+zuix4tTY6+833bohKnED0sxXrJWif26b20vVv65guUaj8eHzvAicS+AQA36+/SC864eomA5jkAV2YWkMd7m4TNFHJYtLp0FujTEbBBJZIeJu0eT0FlgGerrshCFiBxUn2UryUgsNSG+u/Un74o5NRj99EMeA0+fj7LaTevXALXu0eJyCTwygTciLkZr9TsLF0FvqzxVwb8H2GfY89s0pwkDwAJcvl5qI+gn/v4boS6CFDX4TbBbTRFQFOYvBluApYmPn5ay9snGlpWZzTBUv+OP4s1/b1iNZp4+1TXJUdEClpCmW1q2rtzyD4f19rqC6ODQXyeV5ESIDKG2lFoTS0uQgwSGPktCHRsd03xsCI7yRlTzKt4nXjBdRFw4UhfypNBlwAmKDVl2qkgChL1nezQzuMP0/7JkLfU4eeFQCJEWt4uGoOyqGsFj"}}, {"n": 8, "kind": "workshop", "week": 4, "title": "Демо-день", "short": "Твоя личная система", "tasks": [{"id": "8.1", "main": true}, {"id": "8.2"}, {"id": "8.3"}], "lock": {"v": 1, "iv": "xmO7M0402HIgVig7", "data": "RYg0sOnNi0CVH1MeXXPJlRVplSE1Mn/SAJO+CTATAv4p9Z/o/iNLT7gxWqj8aaYCAJOSc1TTGzifK10/X9qVV6/kcYyWf9PgdCFWEqu+JJx/Bj9ZtP2SLEw/hS4kd7AY67anJ9zkRSx+ZZd6MuidbaX1f+oDN5tkw2tWnpvZBNtZ5qcJecbwc76Len9xi++oyfTX9HPyS1T/NEElw7CACWT4rPJvEgf6C8NkAO5+RozemIDtN5Y8mT4G7sLiSLsr4DquT+K0XzRoGTLgD7J9ZXCj5v55boyV3pCzZLe92pa3+22Ym75n/S7zwr+dmii/AewaV0Kx3Ygbwy1hyuLrGl4ZR/SjpIuihsvHqhg3LgsVriBpjKX5d7gn0BbGvRP1ofFH3Cni7rFqBxKuYmnP3K+IWFkNyMkN4PxU6VwU+MHJlgR7Y3U4iB+2x38UGIU3I7WZlDr2DzXVcbLGsmBYKmqae40+c2jjh+Fm7mnPyxdXwedjlJwHE2Gl5zC4OgdDNHK7i+hpIYjk17QWRi8qaeUzJd3stNfLS7EqpOkdsYM="}}]};
+</script>
+<script>
+window.STUDENT = {"id": "", "name": ""};
+</script>
+<script>
+(() => {
+  "use strict";
+  const C = window.COURSE;
+  const S = window.STUDENT || { id: "", name: "" };
+  // На сайте — вход и записи в Firebase (window.CLOUD + window.FB вшивает build.py). Без них — файл с диска, как раньше.
+  const CLOUD = window.CLOUD && window.FB ? window.CLOUD : null;
+  const FIRE = window.FB;                     // Firebase (FB внутри — это пометки к задаче)
+  let KEY = `vsmysle:${C.id}:${S.id || "local"}`;
+  const AUTHOR = C.author;
+  const AUTHOR_GEN = AUTHOR.short === "Ваня" ? "Вани" : AUTHOR.short;
+
+  /* ---------- помощники ---------- */
+  const $ = (q, r = document) => r.querySelector(q);
+  function h(tag, attrs, ...kids) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (v == null || v === false) continue;
+      if (k === "class") el.className = v;
+      else if (k === "text") el.textContent = v;
+      else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? "" : v);
+    }
+    for (const kid of kids.flat(Infinity)) if (kid != null && kid !== false) el.append(kid);
+    return el;
+  }
+  const NS = "http://www.w3.org/2000/svg";
+  function s(tag, attrs, ...kids) {
+    const el = document.createElementNS(NS, tag);
+    for (const [k, v] of Object.entries(attrs || {})) if (v != null) el.setAttribute(k, v);
+    for (const kid of kids.flat(Infinity)) if (kid != null) el.append(kid);
+    return el;
+  }
+  function rich(text) {
+    const frag = document.createDocumentFragment();
+    String(text).split(/(\*\*[^*]+\*\*)/g).forEach(part => {
+      if (/^\*\*[^*]+\*\*$/.test(part)) frag.append(h("strong", { text: part.slice(2, -2) }));
+      else if (part) frag.append(part);
+    });
+    return frag;
+  }
+  const debounce = (fn, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; };
+  const fmtDate = iso => new Date(iso).toLocaleDateString("ru-RU", { day: "numeric", month: "long" });
+  const daysSince = iso => (Date.now() - new Date(iso).getTime()) / 864e5;
+  const autosize = el => { if (!el.isConnected) return; el.style.height = "auto"; el.style.height = el.scrollHeight + 2 + "px"; };
+  const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const SPREAD_MQ = matchMedia("(min-width: 900px) and (min-aspect-ratio: 1/1)");
+  const isSpread = () => SPREAD_MQ.matches;
+  function plural(n, one, few, many) {
+    const a = n % 10, b = n % 100;
+    if (a === 1 && b !== 11) return one;
+    if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return few;
+    return many;
+  }
+  const randomId = () => "s" + Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
+
+  /* Рисованные значки */
+  const SPARK = "M12 0 C 13 8, 16 11, 24 12 C 16 13, 13 16, 12 24 C 11 16, 8 13, 0 12 C 8 11, 11 8, 12 0 Z";
+  const sparkSvg = (fill, cls) => s("svg", { class: cls || "", viewBox: "0 0 24 24", "aria-hidden": "true" }, s("path", { d: SPARK, fill, stroke: "#192d3b", "stroke-width": "1.6", "stroke-linejoin": "round" }));
+  const starSvg = () => s("svg", { viewBox: "0 0 24 24", "aria-hidden": "true" }, s("path", { d: "M12 2 L14.6 8.6 L21.6 9.2 L16.2 13.8 L17.9 20.8 L12 17 L6.1 20.8 L7.8 13.8 L2.4 9.2 L9.4 8.6 Z", fill: "#fff", stroke: "#192d3b", "stroke-width": "2", "stroke-linejoin": "round" }));
+  const arrowSvg = () => s("svg", { viewBox: "0 0 26 22", "aria-hidden": "true" }, s("path", { d: "M3 3 C 4 12, 9 16, 21 16 M16 10 L22 16 L15 20", fill: "none", stroke: "#ef493e", "stroke-width": "2.6", "stroke-linecap": "round", "stroke-linejoin": "round" }));
+
+  /* ---------- курс ---------- */
+  const CHAPTERS = C.chapters;
+  const ALL = CHAPTERS.flatMap(ch => (ch.tasks || []).map(t => ({ ...t, ch: ch.n })));
+  const byId = Object.fromEntries(ALL.map(t => [t.id, t]));
+  const chapter = n => CHAPTERS.find(c => c.n === n);
+  const kindWord = k => (k === "workshop" ? "воркшоп" : k === "meet" ? "знакомство" : "урок");
+
+  /* ---------- слова к главам ----------
+     Главы 1–8 лежат в файле зашифрованными (AES-GCM, ключ из слова через PBKDF2 — те же параметры, что в build.py).
+     Ученик вводит слово — глава расшифровывается и запоминается вместе с записями. Этим же ключом
+     открывается «Свежее со встречи» этой главы в живой базе. */
+  const enc = new TextEncoder(), dec = new TextDecoder();
+  const normWord = w => String(w || "").trim().toLowerCase().replace(/ё/g, "е");
+  const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const KEYS = {};                       // номер главы → ключ
+  async function deriveKey(n, word) {
+    const base = await crypto.subtle.importKey("raw", enc.encode(normWord(word)), "PBKDF2", false, ["deriveKey"]);
+    return crypto.subtle.deriveKey({ name: "PBKDF2", salt: enc.encode(`vsmysle:${C.id}:${n}`), iterations: 150000, hash: "SHA-256" },
+      base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  }
+  async function openBox(key, box) {
+    const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv: unb64(box.iv) }, key, unb64(box.data));
+    return JSON.parse(dec.decode(pt));
+  }
+  const isLocked = ch => !!ch.lock && !ch.opened;
+  async function unlockChapter(ch, word) {
+    const key = await deriveKey(ch.n, word);
+    const hidden = await openBox(key, ch.lock);          // неверное слово → OperationError
+    for (const k of ["body", "meeting", "video", "links"]) if (hidden[k]) ch[k] = hidden[k];
+    for (const t of ch.tasks || []) {
+      const d = hidden.tasks?.[t.id];
+      if (d) { Object.assign(t, d); if (byId[t.id]) Object.assign(byId[t.id], d); }
+    }
+    KEYS[ch.n] = key; ch.opened = true;
+    await openBaseFor(ch.n);
+  }
+  function sanitizeWords(w) {
+    const out = {};
+    if (w && typeof w === "object") for (const [n, v] of Object.entries(w))
+      if (/^\d+$/.test(n) && typeof v === "string" && v.trim() && v.length <= 60 && chapter(+n)?.lock) out[n] = normWord(v);
+    return out;
+  }
+  function markLockedTabs() {
+    document.querySelectorAll(".tab[data-ch]").forEach(t => t.classList.toggle("is-locked", isLocked(chapter(+t.dataset.ch))));
+  }
+  async function unlockSaved() {
+    const todo = CHAPTERS.filter(ch => isLocked(ch) && state.words[ch.n]);
+    if (!todo.length) return;
+    await Promise.all(todo.map(ch => unlockChapter(ch, state.words[ch.n]).catch(() => { delete state.words[ch.n]; })));
+    markLockedTabs();
+    if (opened) renderNow();
+  }
+
+  /* ---------- живая база: свежее со встреч ----------
+     Тезисы уроков лежат в этом файле. Всё, что поменялось на встречах (новые функции, что попробовали
+     вживую, вопросы, поправки, ссылки на записи), — в базе в интернете. Блокнот подтягивает её при открытии
+     и запоминает последнюю версию, чтобы без интернета показывать хотя бы её. */
+  const BASE_KEY = `vsmysle:${C.id}:base`;
+  const FRESH_KINDS = { new: "в приложении", live: "попробовали вживую", qa: "вопрос со встречи", fix: "поправка к тезису" };
+  const httpsOnly = u => (typeof u === "string" && /^https:\/\//.test(u) ? u : "");
+  const str = (v, max) => (typeof v === "string" ? v.slice(0, max) : "");
+  function sanitizeBaseChapter(c) {
+    const rec = c.recording && typeof c.recording === "object"
+      ? { title: str(c.recording.title, 120), length: str(c.recording.length, 40), url: httpsOnly(c.recording.url) } : null;
+    const items = Array.isArray(c.items) ? c.items.slice(0, 40).filter(x => x && FRESH_KINDS[x.kind] && typeof x.text === "string")
+      .map(x => ({ kind: x.kind, text: x.text.slice(0, 600), date: str(x.date, 10) })) : [];
+    return { recording: rec, items };
+  }
+  function sanitizeBase(b) {
+    if (!b || typeof b !== "object" || !b.chapters || typeof b.chapters !== "object") return null;
+    const chapters = {};
+    for (const [n, c] of Object.entries(b.chapters)) {
+      if (!c || typeof c !== "object") continue;
+      if (c.lock && typeof c.lock.iv === "string" && typeof c.lock.data === "string")   // глава под словом — расшифруем, когда откроют
+        chapters[n] = { lock: { iv: c.lock.iv.slice(0, 64), data: c.lock.data.slice(0, 500000) } };
+      else chapters[n] = sanitizeBaseChapter(c);
+    }
+    return { updated: str(b.updated, 10), link: httpsOnly(b.link), chapters };
+  }
+  const BASE_OPEN = {};                  // расшифрованные главы базы
+  async function openBaseFor(n) {
+    const c = BASE?.chapters?.[n];
+    if (!c?.lock || !KEYS[n]) return;
+    try { BASE_OPEN[n] = sanitizeBaseChapter(await openBox(KEYS[n], c.lock)); } catch (e) { delete BASE_OPEN[n]; }
+  }
+  let BASE = null, baseDemo = false;
+  try { BASE = sanitizeBase(JSON.parse(localStorage.getItem(BASE_KEY))); } catch (e) {}
+  if (!BASE && C.base?.demo) { BASE = sanitizeBase(C.base.demo); baseDemo = !!BASE; }
+  async function pullBase() {
+    const url = httpsOnly(C.base?.url);
+    if (!url) return;
+    try {
+      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 8000);
+      const r = await fetch(url + (url.includes("?") ? "&" : "?") + "t=" + Date.now(), { cache: "no-store", signal: ctl.signal });
+      clearTimeout(t);
+      if (!r.ok) return;
+      const fresh = sanitizeBase(await r.json());
+      if (!fresh) return;
+      const same = !baseDemo && JSON.stringify(fresh) === JSON.stringify(BASE);
+      BASE = fresh; baseDemo = false;
+      try { localStorage.setItem(BASE_KEY, JSON.stringify(fresh)); } catch (e) {}
+      for (const n of Object.keys(BASE_OPEN)) delete BASE_OPEN[n];
+      await Promise.all(Object.keys(KEYS).map(openBaseFor));
+      if (!same && opened && !document.activeElement?.closest("input, textarea")) renderNow();
+    } catch (e) { /* нет интернета — остаётся последняя сохранённая версия */ }
+  }
+  const baseOf = ch => { const c = BASE?.chapters?.[ch.n]; return c ? (c.lock ? BASE_OPEN[ch.n] || null : c) : null; };
+  function freshCard(ch) {
+    const b = baseOf(ch);
+    if (!b || !b.items.length) return null;
+    const dates = b.items.map(x => x.date).filter(Boolean).sort();
+    const last = dates[dates.length - 1] || BASE.updated;
+    return h("section", { class: "fresh", "aria-label": "Свежее со встречи" },
+      h("div", { class: "fresh__top" },
+        h("span", { class: "fresh__k", text: "Свежее со встречи" }),
+        last ? h("span", { class: "fresh__date", text: `обновлено ${fmtDate(last)}` }) : null,
+        baseDemo ? h("span", { class: "fresh__demo", text: "пример" }) : null),
+      h("ul", { class: "fresh__list" }, b.items.map(x => h("li", { class: "fresh__item" },
+        h("span", { class: `fresh__tag fresh__tag--${x.kind}`, text: FRESH_KINDS[x.kind] }), h("span", {}, rich(x.text))))),
+      h("div", { class: "fresh__foot" }, BASE.link   // слова открытых глав едут после «#» — на сервер они не уходят
+        ? h("a", { href: BASE.link + (Object.keys(state.words).length ? "#w=" + encodeURIComponent(JSON.stringify(state.words)) : ""), target: "_blank", rel: "noopener", text: "Вся база курса →" })
+        : "Здесь будет ссылка на всю базу курса"));
+  }
+
+  /* ---------- обложка: значения по умолчанию (нужны раньше состояния) ---------- */
+  const COVER_COLORS = ["night", "scarlet", "pink", "yellow", "mint", "lilac"];
+  const COVER_PATTERNS = ["plain", "dots", "stripes", "grid"];
+  const COVER_BANDS = ["scarlet", "pink", "yellow", "cream", "ink", "none"];
+  const FONT_KEYS = ["shantell", "roboto", "caveat", "marck", "amatic", "bubbles", "pixel", "lobster", "unbounded", "paint"];
+  const STICKER_KEYS = ["logo", "dot10", "burst", "sparkY", "sparkP", "sparkC", "star", "heart", "bolt", "laptop", "clapper", "smile", "cloud", "ai", "done", "flower", "planet", "coffee", "wow"];
+  const defaultStickers = () => [
+    { k: "logo", x: 27, y: 10, r: -5, s: 1 }, { k: "dot10", x: 73, y: 17, r: -10, s: 1 }, { k: "burst", x: 69, y: 45, r: 9, s: 1 },
+    { k: "sparkY", x: 9, y: 86, r: 0, s: 1 }, { k: "sparkC", x: 60, y: 14, r: 0, s: .75 }, { k: "sparkP", x: 94, y: 63, r: 0, s: .9 }];
+  const defaultCustom = () => ({ color: "night", pattern: "plain", band: "scarlet", name: "", font: "shantell", stickers: defaultStickers() });
+  const num = (v, lo, hi, def) => (typeof v === "number" && isFinite(v) ? Math.min(hi, Math.max(lo, v)) : def);
+  function sanitizeCustom(c) {         // и для своих записей, и для чужого файла при восстановлении
+    const d = defaultCustom();
+    if (!c || typeof c !== "object") return d;
+    const pick = (v, list) => (list.includes(v) ? v : null);
+    return {
+      color: pick(c.color, COVER_COLORS) || d.color,
+      pattern: pick(c.pattern, COVER_PATTERNS) || d.pattern,
+      band: pick(c.band, COVER_BANDS) || d.band,
+      name: typeof c.name === "string" ? c.name.slice(0, 40) : "",
+      font: pick(c.font, FONT_KEYS) || d.font,
+      stickers: Array.isArray(c.stickers)
+        ? c.stickers.filter(x => x && STICKER_KEYS.includes(x.k)).slice(0, 40)
+            .map(x => ({ k: x.k, x: num(x.x, 0, 100, 50), y: num(x.y, 0, 100, 50), r: num(x.r, -360, 360, 0), s: num(x.s, .3, 3, 1) }))
+        : d.stickers
+    };
+  }
+
+  /* ---------- состояние ---------- */
+  let storageOK = true;
+  function blank() {
+    const now = new Date().toISOString();
+    return { format: 1, courseId: C.id, student: { id: S.id || randomId(), name: S.name || "" },
+      createdAt: now, updatedAt: now, tasks: {}, brief: {}, feedback: { general: "", at: null, items: {} },
+      custom: defaultCustom(), words: {}, lastExportAt: null, changedSinceExport: false };
+  }
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) {
+        const st = JSON.parse(raw);
+        if (st && st.format === 1) {
+          if (S.name && !st.student.name) st.student.name = S.name;
+          st.feedback = st.feedback || { general: "", at: null, items: {} };
+          st.brief = st.brief || {};
+          st.custom = sanitizeCustom(st.custom);
+          st.words = sanitizeWords(st.words);
+          return st;
+        }
+      }
+    } catch (e) { storageOK = false; }
+    return blank();
+  }
+  let state = CLOUD ? blank() : load();       // на сайте записи подгружаются после входа (startSession)
+  const isFresh = !CLOUD && state.updatedAt === state.createdAt;
+  let user = null;                             // вошедший ученик (только на сайте)
+  function persist() {
+    if (CLOUD && !user) return;
+    state.updatedAt = new Date().toISOString();
+    try { localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; } catch (e) { storageOK = false; }
+    renderStorageWarn();
+  }
+  const persistSoon = debounce(persist, 250);
+  function changed() { state.changedSinceExport = true; persistSoon(); refreshChrome(); if (CLOUD) pushSoon(); }
+  const T = id => (state.tasks[id] ||= { done: false, answer: "", link: "" });
+  const FB = id => state.feedback.items[id] || null;
+  const doneCount = () => ALL.filter(t => state.tasks[t.id]?.done).length;
+  const mainOf = ch => (ch.tasks || []).find(t => t.main);
+  const chDone = ch => { const m = mainOf(ch); return !!(m && state.tasks[m.id]?.done); };
+  const chAcc = ch => { const m = mainOf(ch); return !!(m && FB(m.id)?.verdict); };   // Ваня посмотрел главную задачу
+
+  let toastT;
+  function toast(msg, bad) {
+    const el = $("#toast");
+    el.textContent = msg; el.classList.toggle("toast--bad", !!bad); el.classList.add("is-on");
+    clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("is-on"), bad ? 6000 : 3800);
+  }
+  // Zen и другие браузеры на Firefox не сохраняют записи файла с диска, если в имени файла есть кириллица
+  const badFileName = location.protocol === "file:" && /Firefox\//.test(navigator.userAgent)
+    && /[^\x00-\x7F]/.test(decodeURIComponent(location.pathname.split("/").pop() || ""));
+  function renderStorageWarn() {
+    const msg = !storageOK
+      ? CLOUD ? "Этот браузер не даёт хранить копию записей — без интернета они не сохранятся. Лучше открыть блокнот не в режиме инкогнито."
+        : "Этот браузер не даёт блокноту сохранять записи. Открой файл в Chrome, Edge или Safari и не используй режим инкогнито."
+      : badFileName
+        ? "Переименуй файл блокнота латинскими буквами, например bloknot.html, — иначе этот браузер забудет записи после закрытия. Папки переименовывать не нужно."
+        : "";
+    $("#storageWarn").replaceChildren(msg ? h("div", { class: "warn-storage", text: msg }) : "");
+  }
+
+  /* ---------- шапка, закладки ---------- */
+  function refreshChrome() {
+    $("#barTitle").textContent = C.title;
+    $("#who").textContent = state.student.name || "";
+    const d = doneCount();
+    $("#count").replaceChildren(h("span", { text: "вычеркнуто " }), h("b", { text: String(d) }), ` / ${ALL.length}`);
+    const r = $("#remind");
+    const stale = !CLOUD && state.changedSinceExport && d > 0 && (!state.lastExportAt || daysSince(state.lastExportAt) > 3);
+    r.hidden = !stale;
+    if (stale) r.textContent = state.lastExportAt ? `копия не сохранялась ${Math.floor(daysSince(state.lastExportAt))} дн. →` : "копия ещё не сохранялась →";
+    document.querySelectorAll(".tab[data-ch]").forEach(t => {
+      const ch = chapter(+t.dataset.ch);
+      const mark = t.querySelector(".tab__mark");
+      mark.replaceChildren();
+      if (chAcc(ch)) mark.append(sparkSvg("#ef493e"));
+      else if (chDone(ch)) mark.append(s("svg", { viewBox: "0 0 12 12" }, s("circle", { cx: 6, cy: 6, r: 4.5, fill: "#192d3b" })));
+    });
+  }
+  function renderTabs() {
+    $("#tabs").replaceChildren(
+      h("a", { class: "tab tab--word", href: "#/map", "data-i": 0, text: "Маршрут" }),
+      ...CHAPTERS.map((ch, i) => h("a", {
+        class: "tab " + (ch.kind === "workshop" ? "tab--camp" : "tab--lesson") + (isLocked(ch) ? " is-locked" : ""),
+        href: `#/ch/${ch.n}`, "data-ch": ch.n, "data-i": i + 1,
+        "aria-label": `Глава ${ch.n}. ${ch.title}, ${kindWord(ch.kind)}`
+      }, String(ch.n), h("span", { class: "tab__mark", "aria-hidden": "true" }))),
+      h("a", { class: "tab tab--word", href: "#/pocket", "data-i": CHAPTERS.length + 1, text: "Кармашек" })
+    );
+  }
+  function markTab(i) {
+    document.querySelectorAll(".tab").forEach(t => {
+      const on = +t.dataset.i === i;
+      t.classList.toggle("is-active", on);
+      if (on) { t.setAttribute("aria-current", "page"); if (!isSpread()) t.scrollIntoView?.({ block: "nearest", inline: "nearest" }); }
+      else t.removeAttribute("aria-current");
+    });
+  }
+
+  /* ---------- общие куски страниц ---------- */
+  const head = (eyebrow, title, sub) => h("header", {},
+    h("div", { class: "eyebrow" }, eyebrow.map(e => h("span", { text: e }))),
+    h("h1", { class: "title", tabindex: "-1", text: title }),
+    sub ? h("p", { class: "hand sub", text: sub }) : null);
+  function copyText(text, btn) {
+    const ok = () => { const old = btn.textContent; btn.textContent = "Скопировано"; setTimeout(() => (btn.textContent = old), 1600); };
+    const fallback = () => { const ta = h("textarea", { class: "sr" }); ta.value = text; document.body.append(ta); ta.select();
+      try { document.execCommand("copy"); ok(); } catch (e) { toast("Не получилось скопировать — выдели текст и скопируй вручную.", true); } ta.remove(); };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(text).then(ok, fallback); else fallback();
+  }
+  function promptCard(title, text) {
+    const btn = h("button", { class: "pill pill--small", type: "button", text: "Скопировать" });
+    btn.addEventListener("click", () => copyText(text, btn));
+    return h("div", { class: "card" }, h("div", { class: "card__k", text: title || "Заготовка" }), h("div", { class: "card__text", text }), h("div", { class: "card__foot" }, btn));
+  }
+  function laptop(v, kind) {
+    const cap = [v.title, v.length].filter(Boolean).join(" · ");
+    const svg = s("svg", { viewBox: "0 0 400 262", "aria-hidden": "true" },
+      s("rect", { x: 38, y: 8, width: 324, height: 204, rx: 16, fill: "#29495b", stroke: "#192d3b", "stroke-width": 5 }),
+      s("rect", { x: 56, y: 24, width: 288, height: 170, rx: 7, fill: "#1a3040", stroke: "#192d3b", "stroke-width": 3 }),
+      s("path", { d: "M8 214 H392 L372 252 Q370 256 364 256 H36 Q30 256 28 252 Z", fill: "#dde5e3", stroke: "#192d3b", "stroke-width": 5, "stroke-linejoin": "round" }),
+      s("path", { d: "M160 226 H240", stroke: "#192d3b", "stroke-width": 4, "stroke-linecap": "round" }),
+      s("g", { class: "play" },
+        s("circle", { cx: 200, cy: 104, r: 34, fill: "#ff9fce", stroke: "#192d3b", "stroke-width": 5 }),
+        s("path", { d: "M190 88 L216 104 L190 120 Z", fill: "#192d3b", stroke: "#192d3b", "stroke-width": 3, "stroke-linejoin": "round" })),
+      v.url ? null : s("text", { x: 200, y: 172, "text-anchor": "middle", fill: "#f5edcf", "font-family": "Shantell Sans, cursive", "font-size": 17 },
+        "запись появится после встречи"),
+      s("path", { d: SPARK, transform: "translate(330 -10) scale(1.2)", fill: "#f7cf4a", stroke: "#192d3b", "stroke-width": 1.6 }),
+      s("path", { d: SPARK, transform: "translate(14 176) scale(.8)", fill: "#ff9fce", stroke: "#192d3b", "stroke-width": 1.6 }));
+    const inner = [svg, h("span", { class: "laptop__cap", text: cap })];
+    return v.url
+      ? h("a", { class: "laptop", href: v.url, target: "_blank", rel: "noopener", "aria-label": `${cap}, откроется Яндекс Диск` }, inner)
+      : h("div", { class: "laptop", role: "img", "aria-label": `${cap}: запись пока не загружена` }, inner);
+  }
+  function chatClip(caption) {
+    return h("figure", { class: "clip" },
+      h("span", { class: "clip__tape clip__tape--a", "aria-hidden": "true" }), h("span", { class: "clip__tape clip__tape--b", "aria-hidden": "true" }),
+      h("div", { class: "clip__screen" }, h("div", { class: "mock", "aria-hidden": "true" },
+        h("div", { class: "mock__bar" }, h("i"), h("i"), h("i")),
+        h("div", { class: "mock__body" },
+          h("div", { class: "mock__me" }, h("div", { class: "mock__shot" }), "Что здесь не так?"),
+          h("div", { class: "mock__line", style: "width:82%" }), h("div", { class: "mock__line", style: "width:66%" }), h("div", { class: "mock__line", style: "width:44%" })))),
+      h("figcaption", { class: "clip__cap", text: caption }));
+  }
+  const note = text => h("p", { class: "note" }, arrowSvg(), h("span", { text }));
+
+  const BRIEF = [
+    ["context", "Контекст", "кто ты и в какой ситуации", "Нас двое, живём в Москве, отпуск 10 дней в мае"],
+    ["goal", "Цель", "зачем это всё", "Отдохнуть без спешки"],
+    ["task", "Задача", "что конкретно сделать", "Предложи 3 направления"],
+    ["limits", "Ограничения", "чего точно не надо", "Без пляжей, не больше одной пересадки"],
+    ["format", "Формат", "в каком виде нужен ответ", "Таблица: направление, почему нам, бюджет"],
+    ["criteria", "Как понять, что получилось", "по какому признаку примешь работу", "По каждому варианту понятно, почему он нам"]
+  ];
+  const briefText = () => BRIEF.filter(([k]) => (state.brief[k] || "").trim())
+    .map(([k, label]) => `${k === "criteria" ? "Получилось, если" : label}: ${state.brief[k].trim()}`).join("\n");
+  function briefBuilder() {
+    const out = h("div", { class: "card__text" });
+    const copyBtn = h("button", { class: "pill pill--small", type: "button", text: "Скопировать бриф" });
+    const toTask = h("button", { class: "linkbtn", type: "button", text: "Вставить в задачу 1.1" });
+    const update = () => { const t = briefText(); out.replaceChildren(t || h("span", { class: "brief__empty", text: "Заполни хотя бы задачу — бриф соберётся здесь." })); copyBtn.disabled = toTask.disabled = !t; };
+    copyBtn.addEventListener("click", () => copyText(briefText(), copyBtn));
+    toTask.addEventListener("click", () => {
+      const st = T("1.1");
+      st.answer = (st.answer ? st.answer.trimEnd() + "\n\n" : "") + briefText();
+      changed();
+      const ta = document.querySelector('.page [data-answer="1.1"]');
+      if (ta) { ta.value = st.answer; autosize(ta); ta.dispatchEvent(new Event("input")); ta.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "center" }); }
+      toast("Бриф вставлен в задачу 1.1.");
+    });
+    const rows = BRIEF.map(([k, label, help, ph]) => {
+      const ta = h("textarea", { class: "brief__in", rows: "1", placeholder: ph, "aria-label": label });
+      ta.value = state.brief[k] || "";
+      ta.addEventListener("input", () => { state.brief[k] = ta.value; autosize(ta); update(); changed(); });
+      return h("div", { class: "brief__row" }, h("div", { class: "brief__k" }, label, h("span", { class: "brief__help", text: help })), ta);
+    });
+    update();
+    return [h("div", { class: "brief" }, rows),
+      h("div", { class: "card" }, h("div", { class: "card__k", text: "Твой бриф" }), out, h("div", { class: "card__foot" }, toTask, copyBtn))];
+  }
+  function linksCard(links) {          // памятка: ссылки на программы, чтобы не искать в интернете
+    const ok = links.filter(l => /^https:\/\//.test(l.u));
+    return h("div", { class: "card card--links" }, h("div", { class: "card__k", text: "Памятка · ссылки" }),
+      h("ul", { class: "plain links" }, ok.map(l => h("li", {}, h("a", { href: l.u, target: "_blank", rel: "noopener", text: l.t }), h("span", { class: "links__u", text: " — " + l.u.replace(/^https:\/\//, "").replace(/\/$/, "") })))));
+  }
+  function bodyBlocks(ch) {
+    return (ch.body || []).map(bl => {
+      if (bl.t === "h") return h("h2", { class: "sect", text: bl.text });
+      if (bl.t === "p") return h("p", {}, rich(bl.text));
+      if (bl.t === "list") return h("ul", { class: "plain" }, bl.items.map(i => h("li", {}, rich(i))));
+      if (bl.t === "prompt") return promptCard(bl.title, bl.text);
+      if (bl.t === "clip") return chatClip(bl.caption);
+      if (bl.t === "brief") return briefBuilder();
+      if (bl.t === "aside") return note(bl.text);
+      return null;
+    });
+  }
+
+  /* ---------- задача ---------- */
+  function postit(fb) {
+    if (!fb || (!fb.verdict && !fb.comment)) return null;
+    return h("aside", { class: "postit", "aria-label": `Пометка ${AUTHOR_GEN}` },
+      h("div", { class: "postit__who", text: `пометка · ${AUTHOR.short}` }),
+      fb.verdict ? h("div", { class: "stamp", text: "посмотрел" }) : null,   // оценок нет: любая отметка — «Ваня посмотрел»
+      fb.comment ? h("div", { class: "postit__text", text: fb.comment }) : null);
+  }
+  function popSparks(anchor) {
+    if (reduced()) return;
+    const card = anchor.closest(".task");
+    const cr = card.getBoundingClientRect(), br = anchor.getBoundingClientRect(), k = scaleK;
+    [[-16, -18, "#f7cf4a"], [30, -22, "#ff9fce"], [38, 16, "#f7cf4a"]].forEach(([dx, dy, fill], i) => {
+      const sp = sparkSvg(fill, "pop");
+      sp.style.left = ((br.left - cr.left) / k + dx) + "px"; sp.style.top = ((br.top - cr.top) / k + dy) + "px"; sp.style.animationDelay = i * 60 + "ms";
+      card.append(sp); setTimeout(() => sp.remove(), 900);
+    });
+  }
+  function taskCard(t) {
+    const st = T(t.id), fb = FB(t.id), full = !!t.steps;
+    const box = h("button", { class: "box", type: "button" });
+    box.append(s("svg", { viewBox: "0 0 46 44", "aria-hidden": "true" }, s("path", { d: "M9 26 L18 35 L40 6" })));
+    const more = h("div", {});
+    if (full) {
+      more.append(h("ol", { class: "steps" }, t.steps.map(x => h("li", {}, rich(x)))));
+      if (t.prompt) more.append(promptCard("Заготовка", t.prompt));
+      if (t.hint) more.append(h("details", {}, h("summary", { text: "Подсказка" }), h("p", { text: t.hint })));
+    }
+    const ta = h("textarea", { class: "lined", "data-answer": t.id, placeholder: t.result?.placeholder || "Что получилось", "aria-label": `Что получилось в задаче ${t.id}` });
+    ta.value = st.answer || "";
+    const answer = h("div", { class: "answer" }, h("div", { class: "answer__k", text: "Что получилось" }), ta);
+    let linkIn = null;
+    if (t.result?.link) {
+      linkIn = h("input", { type: "url", placeholder: "https://…", inputmode: "url", "aria-label": `Ссылка на результат задачи ${t.id}` });
+      linkIn.value = st.link || "";
+      answer.append(h("div", { class: "linkin" }, h("span", { class: "answer__k", text: "Ссылка" }), linkIn));
+    }
+    const doBtn = h("button", { class: "pill pill--ink", type: "button" });
+    const actions = h("div", { class: "task__actions" }, doBtn);
+    let solBtn = null, lockNote = null, solBox = null;
+    if (t.solution) {
+      solBtn = h("button", { class: "pill", type: "button", text: "Показать разбор" });
+      lockNote = h("span", { class: "task__lock", text: "разбор откроется, когда напишешь, что получилось" });
+      solBox = h("div", { class: "solution", hidden: true },
+        h("h4", { text: "Разбор" }), h("p", {}, rich(t.solution.text)),
+        t.solution.mistakes?.length ? [h("h4", { text: "Частые ошибки", style: "margin-top:12px" }), h("ul", {}, t.solution.mistakes.map(m => h("li", {}, rich(m))))] : null);
+      solBtn.addEventListener("click", () => {
+        solBox.hidden = !solBox.hidden;
+        solBtn.textContent = solBox.hidden ? "Показать разбор" : "Скрыть разбор";
+        if (!solBox.hidden && !st.solutionSeen) { st.solutionSeen = true; changed(); }
+      });
+      actions.append(solBtn, lockNote);
+    }
+    const stepsBtn = full ? h("button", { class: "linkbtn", type: "button", text: "Показать шаги" }) : null;
+    if (stepsBtn) { stepsBtn.addEventListener("click", () => { more.hidden = !more.hidden; stepsBtn.textContent = more.hidden ? "Показать шаги" : "Скрыть шаги"; }); actions.append(stepsBtn); }
+
+    const el = h("article", { class: "task", "data-task": t.id },
+      postit(fb),
+      h("div", { class: "task__top" }, box, h("span", { class: "task__id", text: t.id }), t.main ? h("span", { class: "star" }, starSvg(), "главная") : null),
+      h("p", { class: "quote", text: `«${t.quote}»` }),
+      h("h3", { class: "task__title" }, h("span", { class: "strike", text: t.title })),
+      more, answer, actions, solBox);
+
+    function sync() {
+      el.classList.toggle("is-done", !!st.done);
+      box.setAttribute("aria-pressed", String(!!st.done));
+      box.setAttribute("aria-label", `Задача ${t.id}: ${st.done ? "вычеркнута, вернуть в работу" : "вычеркнуть"}`);
+      doBtn.textContent = st.done ? "Вернуть в работу" : "Вычеркнуть";
+      doBtn.className = st.done ? "pill" : "pill pill--ink";
+      if (full) { more.hidden = !!st.done; stepsBtn.hidden = !st.done; stepsBtn.textContent = "Показать шаги"; }
+      if (solBtn) { const open = !!(st.done || (st.answer || "").trim()); solBtn.disabled = !open; lockNote.hidden = open; }
+    }
+    function toggle() {
+      st.done = !st.done; st.doneAt = st.done ? new Date().toISOString() : null;
+      sync(); changed();
+      if (st.done) {
+        popSparks(box);
+        const left = ALL.filter(x => x.ch === t.ch && !state.tasks[x.id]?.done).length;
+        toast(t.main ? `Главная задача главы ${t.ch} вычеркнута.` : left ? `Вычеркнуто. В главе осталось ${left} ${plural(left, "задача", "задачи", "задач")}.` : `Все задачи главы ${t.ch} вычеркнуты.`);
+      }
+      const cnt = el.closest(".page__in")?.querySelector("[data-chcount]");
+      if (cnt) { const tasks = chapter(t.ch).tasks; cnt.textContent = `${tasks.filter(x => state.tasks[x.id]?.done).length} из ${tasks.length} вычеркнуто`; }
+    }
+    box.addEventListener("click", toggle);
+    doBtn.addEventListener("click", toggle);
+    ta.addEventListener("input", () => { st.answer = ta.value; autosize(ta); sync(); changed(); });
+    linkIn?.addEventListener("input", () => { st.link = linkIn.value.trim(); changed(); });
+    sync();
+    return el;
+  }
+
+  /* ---------- Маршрут: остров, финиш — на отдельном островке ---------- */
+  const ISLAND = "M70 250 C40 180 70 110 150 95 C210 84 235 40 305 48 C380 56 400 100 455 96 C510 92 540 130 530 185 C522 230 560 260 548 318 C535 380 460 400 400 380 C350 364 320 405 250 400 C170 395 150 350 105 340 C60 330 85 290 70 250 Z";
+  const ISLET = "M558 74 C552 46 612 36 624 66 C632 96 592 116 574 106 C562 99 560 88 558 74 Z";
+  const STOPS = [[105, 298], [172, 200], [236, 306], [292, 190], [356, 322], [405, 214], [456, 332], [497, 238], [591, 80]];   // 9 стоянок: знакомство + 8 занятий, финиш на островке
+  function seg(i) {                    // кусок кривой Катмулла — Рома между стоянками i и i+1
+    const P = STOPS, p0 = P[i - 1] || P[i], p1 = P[i], p2 = P[i + 1], p3 = P[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    return `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0]} ${p2[1]}`;
+  }
+  function stopShape(kind, x, y, r) {
+    return kind === "workshop"
+      ? s("path", { class: "stop", d: `M${x - r * 1.25} ${y + r * .95} L${x} ${y - r * 1.35} L${x + r * 1.25} ${y + r * .95} Z` })
+      : s("circle", { class: "stop", cx: x, cy: y, r });
+  }
+  function islandMap() {
+    const svg = s("svg", { class: "island", viewBox: "0 0 640 440", role: "img", "aria-label": "Карта маршрута: остров из девяти стоянок, финиш — демо-день — на отдельном островке" });
+    [[22, 150], [26, 400], [566, 236], [596, 330], [300, 434], [470, 26], [140, 34]].forEach(([x, y]) =>
+      svg.append(s("path", { class: "wave", d: `M${x} ${y} q 7 -7 14 0 t 14 0 t 14 0` })));
+    svg.append(s("path", { class: "land", d: ISLAND }), s("path", { class: "land", d: ISLET }),
+      s("path", { class: "shore", d: ISLAND, transform: "translate(300 225) scale(.93) translate(-300 -225)" }));
+    [[64, 232, -30], [536, 332, 20], [262, 404, 0]].forEach(([x, y, r]) =>          // штрихи у берега, как на сайте
+      svg.append(s("path", { class: "deco", fill: "none", d: "M0 0 l9 -12 M7 4 l9 -12 M14 8 l9 -12", transform: `translate(${x} ${y}) rotate(${r})` })));
+    svg.append(                                                                      // горы
+      s("path", { class: "deco", fill: "#cfdcda", d: "M318 144 L343 100 L368 144 Z" }),
+      s("path", { class: "deco", fill: "#dde5e3", d: "M348 148 L377 104 L406 148 Z" }),
+      s("path", { class: "deco", fill: "none", d: "M335 114 L343 100 L351 114 M369 118 L377 104 L385 118" }));
+    [[150, 146], [206, 364], [520, 334]].forEach(([x, y]) =>                          // деревья
+      svg.append(s("g", { transform: `translate(${x} ${y})` }, s("path", { class: "deco", d: "M0 0 V14" }), s("circle", { class: "deco", cx: 0, cy: -6, r: 10, fill: "#9fd3bf" }))));
+    svg.append(s("path", { d: SPARK, transform: "translate(22 44) scale(1.4)", fill: "#f7cf4a", stroke: "#192d3b", "stroke-width": 1.4 }),
+      s("text", { class: "big", x: 38, y: 34, "text-anchor": "middle" }, "С"),
+      s("path", { class: "deco", fill: "none", d: "M606 64 V26" }),                      // флажок финиша
+      s("path", { class: "deco", fill: "#ef493e", d: "M606 26 L632 34 L606 43 Z" }),
+      s("text", { class: "lbl", x: 90, y: 364, "text-anchor": "middle" }, "старт"),
+      s("text", { class: "lbl", x: 592, y: 138, "text-anchor": "middle" }, "финиш"));
+    svg.append(s("path", { class: "route", d: `M${STOPS[0][0]} ${STOPS[0][1]} ` + STOPS.slice(1).map((_, i) => seg(i)).join(" ") }));
+    CHAPTERS.forEach((ch, i) => { if (i < CHAPTERS.length - 1 && chDone(ch)) svg.append(s("path", { class: "walked", d: `M${STOPS[i][0]} ${STOPS[i][1]} ${seg(i)}` })); });
+    CHAPTERS.forEach((ch, i) => {
+      const [x, y] = STOPS[i];
+      const cls = chAcc(ch) ? "is-acc" : chDone(ch) ? "is-done" : "";
+      const a = s("a", { href: `#/ch/${ch.n}`, class: cls, "aria-label": `Глава ${ch.n}. ${ch.title}` },
+        s("title", {}, `${ch.n}. ${ch.title}`), stopShape(ch.kind, x, y, 14), s("text", { class: "n", x, y: ch.kind === "workshop" ? y + 3 : y + 1 }, String(ch.n)));
+      if (chAcc(ch)) a.append(s("path", { d: SPARK, transform: `translate(${x + 9} ${y - 30}) scale(.8)`, fill: "#f7cf4a", stroke: "#192d3b", "stroke-width": 1.6 }));
+      svg.append(a);
+    });
+    return svg;
+  }
+  function legend() {
+    const ico = (...k) => s("svg", { viewBox: "0 0 20 20", "aria-hidden": "true" }, ...k);
+    return h("div", { class: "legend" },
+      h("span", {}, ico(s("circle", { cx: 10, cy: 10, r: 7, fill: "#f5edcf", stroke: "#192d3b", "stroke-width": 2.4 })), "урок"),
+      h("span", {}, ico(s("path", { d: "M2 16 L10 3 L18 16 Z", fill: "#f5edcf", stroke: "#192d3b", "stroke-width": 2.4, "stroke-linejoin": "round" })), "живой воркшоп"),
+      h("span", {}, ico(s("circle", { cx: 10, cy: 10, r: 7, fill: "#192d3b" })), "главная задача вычеркнута"),
+      h("span", {}, ico(s("circle", { cx: 10, cy: 10, r: 7, fill: "#ef493e", stroke: "#192d3b", "stroke-width": 2 })), `${AUTHOR.short} посмотрел`));
+  }
+  const stopIcon = ch => s("svg", { class: "rl__stop" + (chAcc(ch) ? " is-acc" : chDone(ch) ? " is-done" : ""), viewBox: "0 0 40 40", "aria-hidden": "true" },
+    stopShape(ch.kind, 20, ch.kind === "workshop" ? 22 : 20, 14), s("text", { x: 20, y: ch.kind === "workshop" ? 25 : 21 }, String(ch.n)));
+  function routeList() {
+    return h("ol", { class: "route-list" }, CHAPTERS.map(ch => h("li", { class: chDone(ch) ? "is-walked" : "" },
+      h("a", { href: `#/ch/${ch.n}` }, stopIcon(ch),
+        h("span", {}, h("span", { class: "rl__t", text: ch.title }), h("span", { class: "rl__k", text: `${kindWord(ch.kind)} · неделя ${ch.week} · ${ch.short}` })),
+        h("span", { class: "minis", "aria-label": `вычеркнуто ${(ch.tasks || []).filter(t => state.tasks[t.id]?.done).length} из ${(ch.tasks || []).length}` },
+          (ch.tasks || []).map(t => { const st = state.tasks[t.id], v = FB(t.id)?.verdict;
+            return h("i", { class: ["mini", t.main && "is-main", st?.done && "is-done", v && "is-acc"].filter(Boolean).join(" ") }); }))))));
+  }
+  function letter() {
+    if (!state.feedback.general) return null;
+    return h("div", { class: "letter" },
+      h("div", { class: "postit__who", text: `записка от ${AUTHOR_GEN}${state.feedback.at ? " · " + fmtDate(state.feedback.at) : ""}` }),
+      h("div", { class: "postit__text", text: state.feedback.general }));
+  }
+  function spreadMap() {
+    const d = doneCount();
+    const name = state.student.name ? state.student.name.split(" ")[0] : "";
+    const sub = d ? `${name ? name + ", в" : "В"}ычеркнуто ${d} из ${ALL.length}. Так держать.` : `${name ? "Привет, " + name + "! " : ""}Начни с главы 0 — первая задача ждёт.`;
+    const header = head(["Маршрут", C.version], C.routeTitle || "Маршрут", sub);
+    const figure = [islandMap(), legend()];
+    const how = [h("h2", { class: "sect", text: "Как вести блокнот" }),
+      h("ol", { class: "steps" },
+        h("li", {}, "Главу открывает слово — его называют в конце предыдущей встречи."),
+        h("li", {}, "Проходишь главу, делаешь задачи и пишешь под каждой, что получилось."),
+        h("li", {}, "Сделал — вычёркиваешь. Главная задача главы — с жёлтой звездой."),
+        CLOUD ? [
+          h("li", {}, "Всё сохраняется само — в твоём аккаунте. Блокнот можно открыть и с другого компьютера, и с телефона."),
+          h("li", {}, `${AUTHOR.short} видит, что ты сделал, и оставляет пометки прямо здесь — жёлтые стикеры на задачах.`)
+        ] : [
+          h("li", {}, rich(`Раз в пару дней жмёшь **«Сохранить для проверки»** и отправляешь файл ${AUTHOR.dative} в Telegram.`)),
+          h("li", {}, rich(`${AUTHOR.short} присылает файл с пометками — загружаешь его в **Кармашке**, и на задачах появляются жёлтые стикеры.`))
+        ])];
+    const list = [h("h2", { class: "sect", text: "Главы" }), routeList()];
+    return {
+      left: [header, letter(), list, pnav(-1, null, "l", 0)],
+      right: [h("h2", { class: "sect", style: "margin-top:0", text: "Карта" }), figure, how, pnav(null, 1, "r", 0)],
+      single: [header, letter(), figure, list, how, pnavBoth(0)]
+    };
+  }
+
+  /* ---------- Глава ---------- */
+  function lockCard(ch) {
+    const inp = h("input", { class: "lock__in", type: "text", autocomplete: "off", autocapitalize: "off", spellcheck: "false", placeholder: "слово", "aria-label": `Слово к главе ${ch.n}` });
+    const btn = h("button", { class: "pill pill--ink", type: "submit", text: "Открыть главу" });
+    const msg = h("p", { class: "lock__msg", "aria-live": "polite" });
+    const form = h("form", { class: "lock__form" }, inp, btn);
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const w = inp.value;
+      if (!normWord(w)) { inp.focus(); return; }
+      btn.disabled = true; btn.textContent = "Открываю…"; msg.textContent = "";
+      try {
+        await unlockChapter(ch, w);
+        state.words[ch.n] = normWord(w); changed(); markLockedTabs(); renderNow();
+        toast(`Глава ${ch.n} открыта.`);
+      } catch (err) {
+        btn.disabled = false; btn.textContent = "Открыть главу";
+        msg.textContent = err?.name === "OperationError"
+          ? "Не то слово. Проверь в «Объявлениях» — или спроси в «Помогите»."
+          : "Не получилось открыть главу в этом браузере. Напиши в «Помогите».";
+      }
+    });
+    return h("div", { class: "card lock" }, h("div", { class: "card__k", text: "Глава закрыта" }),
+      h("p", { text: "Её открывает слово. Его называют в конце предыдущей встречи; пропустил встречу — слово лежит в «Объявлениях» чата." }),
+      form, msg);
+  }
+  function spreadLocked(ch, i) {
+    const n = (ch.tasks || []).length;
+    const left = [head([`Глава ${ch.n}`, ch.kind === "workshop" ? "живой воркшоп" : ch.kind === "meet" ? "знакомство" : "живой урок", `неделя ${ch.week}`], ch.title, ch.short), lockCard(ch)];
+    const right = [h("div", { class: "tasks-head" }, h("h2", { class: "title", text: "Задачи главы" }),
+      h("span", { class: "hand", text: `${n} ${plural(n, "задача", "задачи", "задач")} — откроются вместе с главой` }))];
+    return { left: [left, pnav(i - 1, null, "l", i)], right: [right, pnav(null, i + 1, "r", i)], single: [left, right, pnavBoth(i)] };
+  }
+  function spreadChapter(ch, i) {
+    if (isLocked(ch)) return spreadLocked(ch, i);
+    const left = [head([`Глава ${ch.n}`, ch.kind === "workshop" ? "живой воркшоп" : ch.kind === "meet" ? "знакомство" : "живой урок", `неделя ${ch.week}`], ch.title, ch.short)];
+    if (ch.meeting) left.push(h("div", { class: "card" }, h("div", { class: "card__k", text: "Встреча" }),
+      h("dl", { class: "meet" }, h("dt", { text: "Когда" }), h("dd", { text: ch.meeting.when }), h("dt", { text: "Формат" }), h("dd", { text: ch.meeting.length }), h("dt", { text: "Понадобится" }), h("dd", { text: ch.meeting.bring }))));
+    const fr = freshCard(ch);
+    if (fr) left.push(fr);
+    const rec = baseOf(ch)?.recording;       // ссылка на запись встречи приходит из базы, файл пересобирать не нужно
+    if (ch.video || rec) left.push(laptop({ ...(ch.video || {}), ...(rec ? { title: rec.title || ch.video?.title, length: rec.length, url: rec.url } : {}) }, ch.kind));
+    if (ch.body) left.push(bodyBlocks(ch));
+    else left.push(h("p", { class: "soon", text: "Тезисы главы появятся к встрече. Задачи можно посмотреть уже сейчас →" }));
+    if (ch.links?.length) left.push(linksCard(ch.links));
+    const tasks = ch.tasks || [];
+    const doneN = tasks.filter(t => state.tasks[t.id]?.done).length;
+    const right = [h("div", { class: "tasks-head" }, h("h2", { class: "title", text: "Задачи главы" }), h("span", { class: "hand", "data-chcount": "", text: `${doneN} из ${tasks.length} вычеркнуто` })),
+      tasks.map(t => taskCard(byId[t.id]))];   // из общего списка: у задачи там есть номер главы
+    return { left: [left, pnav(i - 1, null, "l", i)], right: [right, pnav(null, i + 1, "r", i)], single: [left, right, pnavBoth(i)] };
+  }
+
+  /* ---------- Кармашек ---------- */
+  function download(name, data) {
+    const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+    const a = h("a", { href: url, download: name }); document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+  const safeName = t => (t || "без-имени").replace(/[\\/:*?"<>|]+/g, "").replace(/\s+/g, "_").slice(0, 40);
+  function exportJournal() {
+    const data = { kind: "vsmysle-journal", format: 1, courseId: C.id, courseVersion: C.version, exportedAt: new Date().toISOString(),
+      student: { ...state.student }, summary: { done: doneCount(), total: ALL.length, mainDone: CHAPTERS.filter(chDone).length },
+      tasks: state.tasks, brief: state.brief, custom: state.custom, words: state.words };
+    download(`блокнот_${safeName(state.student.name)}_${data.exportedAt.slice(0, 10)}.json`, data);
+    state.lastExportAt = data.exportedAt; state.changedSinceExport = false; persist(); refreshChrome();
+    toast(CLOUD ? "Копия сохранена в «Загрузки». Отправлять её никуда не нужно — это на всякий случай."
+      : `Файл для проверки сохранён в «Загрузки». Отправь его ${AUTHOR.dative} в Telegram — @${AUTHOR.telegram}.`);
+    if (SPREADS[cur]?.key === "pocket") renderNow();
+  }
+  function pickFile() { const f = $("#fileIn"); f.value = ""; f.click(); }
+  $("#fileIn").addEventListener("change", async e => {
+    const file = e.target.files[0]; if (!file) return;
+    let data;
+    try { data = JSON.parse(await file.text()); } catch (err) { return toast("Этот файл не открывается как файл блокнота. Нужен .json, который сохранил блокнот или прислал проверяющий.", true); }
+    if (data?.courseId && data.courseId !== C.id) return toast("Этот файл от другого курса — в этот блокнот его загрузить нельзя.", true);
+    if (data?.kind === "vsmysle-feedback") return CLOUD ? toast(`Пометки ${AUTHOR_GEN} теперь приходят сами — файл не нужен.`) : applyFeedback(data);
+    if (data?.kind === "vsmysle-journal") return restoreJournal(data);
+    toast("Это не файл блокнота. Нужен файл, сохранённый через «Сохранить для проверки», или файл с пометками.", true);
+  });
+  function applyFeedback(fb) {
+    if (fb.student?.id && fb.student.id !== state.student.id && !confirm(`Эти пометки написаны для блокнота «${fb.student.name || "без имени"}». Всё равно загрузить их сюда?`)) return;
+    const items = {};
+    for (const [id, v] of Object.entries(fb.items || {})) {
+      if (!byId[id]) continue;
+      const verdict = v.verdict === "seen" || v.verdict === "accepted" || v.verdict === "revise" ? "seen" : null;   // старые отметки тоже считаем «посмотрел»
+      const comment = typeof v.comment === "string" ? v.comment.slice(0, 2000) : "";
+      if (verdict || comment) items[id] = { verdict, comment };
+    }
+    state.feedback = { general: typeof fb.general === "string" ? fb.general.slice(0, 4000) : "", at: fb.createdAt || new Date().toISOString(), items };
+    persist(); refreshChrome(); renderNow();
+    const n = Object.keys(items).length;
+    toast(`Пометки загружены: ${n} ${plural(n, "задача", "задачи", "задач")}. Ищи жёлтые стикеры.`);
+  }
+  function restoreJournal(data) {
+    const when = data.exportedAt ? fmtDate(data.exportedAt) : "неизвестной даты";
+    if (!confirm(`Заменить все записи в блокноте копией от ${when}? Текущие записи пропадут.`)) return;
+    const fbKeep = state.feedback, customKeep = state.custom, wordsKeep = state.words;
+    state = blank();
+    state.student = { id: data.student?.id || state.student.id, name: data.student?.name || S.name || "" };
+    state.tasks = data.tasks || {}; state.brief = data.brief || {}; state.feedback = fbKeep; state.lastExportAt = data.exportedAt || null;
+    state.custom = sanitizeCustom(data.custom || customKeep);
+    state.words = { ...wordsKeep, ...sanitizeWords(data.words) };
+    persist(); refreshChrome(); applyCover(); renderNow(); unlockSaved();
+    toast(`Записи восстановлены из копии от ${when}.`);
+  }
+  function spreadPocket(i) {
+    const erase = h("button", { class: "pill pill--ghost pill--small", type: "button", text: "Стереть все записи" });
+    erase.addEventListener("click", () => {
+      if (!confirm(CLOUD ? "Стереть все записи и вычеркнутые задачи — здесь и в аккаунте? Вернуть их можно только из скачанной копии."
+        : "Стереть все записи, вычеркнутые задачи и пометки? Вернуть их можно только из сохранённого файла.")) return;
+      const student = state.student, custom = state.custom, words = state.words, feedback = state.feedback;
+      state = blank(); state.student = student; state.custom = custom; state.words = words;     // обложку и открытые главы не трогаем — стираются только записи
+      if (CLOUD) state.feedback = feedback;                // пометки Вани живут у него, стереть их отсюда нельзя
+      changed(); renderNow(); toast("Записи стёрты. Обложка осталась как была.");
+    });
+    if (CLOUD) return spreadPocketCloud(i, erase);
+    const left = [head(["Кармашек", "на задней обложке"], "Сохранить и отправить", "Сервера нет — всё живёт у тебя в браузере."),
+      h("p", { style: "margin-top:16px" }, rich("Всё, что ты пишешь, хранится **в этом браузере на этом компьютере**. Поэтому раз в пару дней сохраняй файл: он уходит на проверку и заодно служит резервной копией.")),
+      h("h2", { class: "sect", text: "Что может стереть записи" }),
+      h("ul", { class: "plain" },
+        h("li", {}, "очистка истории и данных сайтов в браузере;"),
+        h("li", {}, "другой браузер или другой компьютер — там блокнот будет пустым;"),
+        h("li", {}, "режим инкогнито — записи исчезнут после закрытия окна.")),
+      note("Переезжаешь на другой компьютер — сохрани файл здесь и загрузи его там."),
+      h("div", { style: "margin-top:18px" }, erase)];
+    const exp = state.lastExportAt ? `последний раз — ${fmtDate(state.lastExportAt)}` : "ещё ни разу";
+    const fbAt = state.feedback.at ? `последние пометки — ${fmtDate(state.feedback.at)}` : "пометок пока не было";
+    const right = [h("div", {},
+      h("div", { class: "pocket-card" }, h("h3", { text: "На проверку" }),
+        h("p", {}, rich(`Блокнот сохранит файл с твоими записями. Отправь его ${AUTHOR.dative} в Telegram — **@${AUTHOR.telegram}**.`)),
+        h("button", { class: "pill pill--ink", type: "button", onclick: exportJournal }, "Сохранить для проверки"), h("span", { class: "status", text: exp })),
+      h("div", { class: "pocket-card" }, h("h3", { text: "Пометки" }),
+        h("p", {}, `Когда ${AUTHOR.short} проверит задачи, он пришлёт файл с пометками. Загрузи его — на задачах появятся жёлтые стикеры.`),
+        h("button", { class: "pill", type: "button", onclick: pickFile }, "Загрузить пометки"), h("span", { class: "status", text: fbAt })),
+      h("div", { class: "pocket-card" }, h("h3", { text: "Восстановить" }),
+        h("p", {}, "Если записи пропали, загрузи последний файл, который сохранял для проверки. Всё вернётся как было на тот день."),
+        h("button", { class: "pill", type: "button", onclick: pickFile }, "Загрузить сохранённый файл")))];
+    return { left: [left, pnav(i - 1, null, "l", i)], right: [right, pnav(null, null, "r", i)], single: [left, right, pnavBoth(i)] };
+  }
+  function spreadPocketCloud(i, erase) {
+    const login = (user?.email || "").split("@")[0];
+    const left = [head(["Кармашек", "на задней обложке"], "Всё сохраняется само", "Ничего отправлять не нужно."),
+      h("p", { style: "margin-top:16px" }, rich("Всё, что ты пишешь, сохраняется **в твоём аккаунте**. Открой блокнот на другом компьютере или на телефоне, войди с тем же логином — записи будут там.")),
+      h("h2", { class: "sect", text: "Если пропал интернет" }),
+      h("p", {}, "Блокнот работает и без него: записи остаются в этом браузере и уезжают в аккаунт, как только появляется связь. Что происходит, видно вверху: «сохранено», «сохраняю…» или «нет связи»."),
+      note(`${AUTHOR.short} видит твои записи сам. Его пометки появляются на задачах жёлтыми стикерами.`),
+      h("div", { style: "margin-top:18px" }, erase)];
+    const fbAt = state.feedback.at ? `последние пометки — ${fmtDate(state.feedback.at)}` : "пометок пока не было";
+    const right = [h("div", {},
+      h("div", { class: "pocket-card" }, h("h3", { text: "Вход" }),
+        h("p", {}, rich(`Твой логин — **${login}**. На чужом компьютере не забудь выйти.`)),
+        h("button", { class: "pill", type: "button", onclick: logOut }, "Выйти")),
+      h("div", { class: "pocket-card" }, h("h3", { text: "Пометки" }),
+        h("p", {}, `${AUTHOR.short} смотрит задачи и оставляет пометки прямо в блокноте — приходят сами.`),
+        h("span", { class: "status", text: fbAt })),
+      h("div", { class: "pocket-card" }, h("h3", { text: "Копия на память" }),
+        h("p", {}, "Файл со всеми записями — на всякий случай или на память после курса. Отправлять его никуда не нужно."),
+        h("button", { class: "pill", type: "button", onclick: exportJournal }, "Скачать копию"),
+        h("button", { class: "pill pill--ghost pill--small", type: "button", onclick: pickFile, style: "margin-left:8px" }, "Загрузить копию")))];
+    return { left: [left, pnav(i - 1, null, "l", i)], right: [right, pnav(null, null, "r", i)], single: [left, right, pnavBoth(i)] };
+  }
+
+  /* ---------- навигация по развороту ---------- */
+  const SPREADS = [{ key: "map" }, ...CHAPTERS.map(ch => ({ key: "ch", n: ch.n })), { key: "pocket" }];
+  const hashOf = i => { const sp = SPREADS[i]; return sp.key === "ch" ? `#/ch/${sp.n}` : `#/${sp.key}`; };
+  const titleOf = i => { const sp = SPREADS[i]; return sp.key === "ch" ? `Глава ${sp.n}` : sp.key === "map" ? "Маршрут" : "Кармашек"; };
+  const nameOf = i => { const sp = SPREADS[i]; return sp.key === "ch" ? chapter(sp.n).title : sp.key === "map" ? "Маршрут" : "Кармашек"; };
+  const navLink = (j, dir, extra) => j === -1
+    ? h("a", Object.assign({ href: "#/cover" }, extra || {}), h("small", { text: "← Обложка" }), h("span", { text: "Закрыть блокнот" }))
+    : j != null && j >= 0 && j < SPREADS.length
+      ? h("a", Object.assign({ href: hashOf(j) }, extra || {}), h("small", { text: dir < 0 ? `← ${titleOf(j)}` : `${titleOf(j)} →` }), h("span", { text: nameOf(j) }))
+      : null;
+  function pnav(prev, next, side, i) {
+    const folio = h("span", { class: "folio", text: `стр. ${i * 2 + (side === "l" ? 2 : 3)}` });
+    return side === "l"
+      ? h("nav", { class: "pnav", "aria-label": "Назад" }, navLink(prev, -1) || h("span"), folio)
+      : h("nav", { class: "pnav pnav--r", "aria-label": "Вперёд" }, folio, navLink(next, 1));
+  }
+  const pnavBoth = i => h("nav", { class: "pnav pnav--r", "aria-label": "Соседние главы" }, navLink(i - 1, -1, { style: "text-align:left;margin-left:0" }) || h("span"), navLink(i + 1, 1));
+  function build(i) {
+    const sp = SPREADS[i];
+    if (sp.key === "map") return spreadMap();
+    if (sp.key === "pocket") return spreadPocket(i);
+    return spreadChapter(chapter(sp.n), i);
+  }
+  function routeIndex() {
+    const m = location.hash.match(/^#\/(map|pocket|ch\/(\d+))/);
+    if (!m) return 0;
+    if (m[2]) { const i = SPREADS.findIndex(x => x.n === +m[2]); return i < 0 ? 0 : i; }
+    return m[1] === "pocket" ? SPREADS.length - 1 : 0;
+  }
+
+  const L = $("#pageL"), R = $("#pageR"), BOOK = $("#book");
+  let cur = null, busy = false, queued = null;
+  const flat = nodes => [nodes].flat(Infinity).filter(Boolean);
+  const fill = (el, nodes) => { el.replaceChildren(...flat(nodes)); el.scrollTop = 0; };
+  const pageIn = nodes => h("div", { class: "page__in" }, flat(nodes || []));
+  function cloneOf(inner) {         // визуальная копия страницы для листа: без id и живых полей
+    const c = inner.cloneNode(true);
+    c.removeAttribute("id"); c.setAttribute("aria-hidden", "true"); c.inert = true;
+    c.querySelectorAll("[id],[data-answer]").forEach(x => { x.removeAttribute("id"); x.removeAttribute("data-answer"); });
+    return c;
+  }
+  // Половинка листа над левой (l) или правой (r) страницей; вращается вокруг корешка
+  function makeTurn(side, inner, hidden) {
+    const el = h("div", { class: `turn turn--${side} page-look page-look--${side}`, "aria-hidden": "true" }, inner);
+    if (hidden) el.style.visibility = "hidden";
+    BOOK.append(el);
+    return el;
+  }
+  // a = -90: лист уходит справа налево (вперёд); a = 90: слева направо (назад)
+  async function flip(front, back, a, mid) {
+    const HALF = 400, P = "perspective(2600px) ";
+    [front, back].forEach(el => el?.getAnimations().forEach(x => x.cancel()));
+    if (reduced()) { if (front) front.style.visibility = "hidden"; mid?.(); if (back) back.style.visibility = "visible"; return; }
+    // Страховка: если браузер притормозил анимацию (фоновая вкладка, свёрнутое окно), доводим её сами
+    const done = anim => Promise.race([anim.finished, new Promise(r => setTimeout(r, HALF + 250))]).then(() => { try { anim.finish(); } catch (e) {} return anim; });
+    const layer = (el, on) => { if (el) el.style.willChange = on ? "transform, filter" : ""; };
+    layer(front, true); layer(back, true);
+    if (front) {
+      front.style.visibility = "visible";
+      await done(front.animate([{ transform: P + "rotateY(0deg)", filter: "brightness(1)" }, { transform: P + `rotateY(${a}deg)`, filter: "brightness(.8)" }],
+        { duration: HALF, easing: "cubic-bezier(.5,0,.9,.5)", fill: "forwards" }));
+      front.style.visibility = "hidden";
+      front.getAnimations().forEach(x => x.cancel()); layer(front, false);
+    }
+    mid?.();
+    if (back) {
+      back.style.visibility = "visible";
+      await done(back.animate([{ transform: P + `rotateY(${-a}deg)`, filter: "brightness(.8)" }, { transform: P + "rotateY(0deg)", filter: "brightness(1)" }],
+        { duration: HALF, easing: "cubic-bezier(.1,.5,.5,1)", fill: "forwards" }));
+      back.getAnimations().forEach(x => x.cancel()); layer(back, false);   // конечное положение = обычное, анимация больше не нужна
+    }
+  }
+  const moveInto = (dst, src) => { dst.replaceChildren(...src.childNodes); dst.scrollTop = 0; };
+  async function go(i, animate) {
+    if (busy) { queued = i; return; }
+    if (i === cur) return;
+    const from = cur; cur = i;
+    const c = build(i);
+    markTab(i);
+    document.title = `${nameOf(i)} · Блокнот`;
+    const spread = isSpread();
+    if (from == null || !animate || reduced()) {
+      if (spread) { fill(L, c.left); fill(R, c.right); } else fill(R, c.single);
+      after(); return;
+    }
+    busy = true;
+    const dir = i > from ? 1 : -1;
+    try {
+      if (spread && dir > 0) {            // вперёд: правая страница уходит налево, на левую ложится новая
+        const front = makeTurn("r", keepScroll(cloneOf(R), R));
+        const backIn = pageIn(c.left), back = makeTurn("l", backIn, true);
+        fill(R, c.right);
+        await flip(front, back, -90);
+        moveInto(L, backIn); front.remove(); back.remove();
+      } else if (spread) {                 // назад: левая страница уходит направо
+        const front = makeTurn("l", keepScroll(cloneOf(L), L));
+        const backIn = pageIn(c.right), back = makeTurn("r", backIn, true);
+        fill(L, c.left);
+        await flip(front, back, 90);
+        moveInto(R, backIn); front.remove(); back.remove();
+      } else if (dir > 0) {                // телефон: страница уходит влево, под ней новая
+        const front = makeTurn("r", keepScroll(cloneOf(R), R));
+        fill(R, c.single);
+        await flip(front, null, -90);
+        front.remove();
+      } else {                             // телефон: новая страница опускается слева
+        const backIn = pageIn(c.single), back = makeTurn("r", backIn, true);
+        await flip(null, back, 90);
+        moveInto(R, backIn); back.remove();
+      }
+    } finally {
+      busy = false;
+      after();
+      if (queued != null) { const q = queued; queued = null; go(q, true); }
+    }
+  }
+  function keepScroll(clone, orig) { const y = orig.scrollTop; requestAnimationFrame(() => { clone.scrollTop = y; }); return clone; }
+  function after() {
+    refreshChrome();
+    requestAnimationFrame(() => document.querySelectorAll(".page textarea").forEach(autosize));
+    const t = (isSpread() ? L : R).querySelector(".title");
+    t?.focus({ preventScroll: true });
+  }
+  function renderNow() { const i = cur ?? routeIndex(); cur = null; go(i, false); }
+
+  /* ---------- обложка: наклейки ---------- */
+  function burstPath() {
+    const pts = [], n = 15, cx = 110, cy = 110;
+    for (let k = 0; k < n * 2; k++) {
+      const a = (k / (n * 2)) * Math.PI * 2 - Math.PI / 2;
+      const r = k % 2 ? 64 + (k % 3) * 4 : 106 - (k % 5) * 5;
+      pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r]);
+    }
+    return "M" + pts.map(p => p.map(v => v.toFixed(1)).join(" ")).join(" L") + " Z";
+  }
+  const INK = "#192d3b";
+  const LOGO_SRC = $(".bar__logo").src;
+  const art = markup => { const t = document.createElement("template"); t.innerHTML = markup.trim(); return t.content.firstElementChild; };   // только наша разметка
+  const ST = {
+    logo:    { w: 44, label: "логотип", make: () => h("img", { src: LOGO_SRC, alt: "", draggable: "false" }) },
+    dot10:   { w: 21, label: "9 глав", make: () => art(`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#f7cf4a" stroke="${INK}" stroke-width="4"/><text x="50" y="52" text-anchor="middle" font-size="21" fill="${INK}">9 ГЛАВ</text><text class="stk-hand" x="50" y="70" text-anchor="middle" font-size="13" fill="${INK}">4 недели</text></svg>`) },
+    burst:   { w: 30, label: "это не сложно!", make: () => art(`<svg viewBox="0 0 220 220"><path d="${burstPath()}" fill="#ff9fce" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><text x="110" y="105" text-anchor="middle" font-size="27" fill="${INK}">ЭТО НЕ</text><text x="110" y="135" text-anchor="middle" font-size="27" fill="${INK}">СЛОЖНО!</text></svg>`) },
+    sparkY:  { w: 6, label: "жёлтая искра", make: () => sparkSvg("#f7cf4a") },
+    sparkP:  { w: 6, label: "розовая искра", make: () => sparkSvg("#ff9fce") },
+    sparkC:  { w: 6, label: "кремовая искра", make: () => sparkSvg("#f5edcf") },
+    star:    { w: 12, label: "звезда", make: () => art(`<svg viewBox="0 0 24 24"><path d="M12 2 L14.6 8.6 L21.6 9.2 L16.2 13.8 L17.9 20.8 L12 17 L6.1 20.8 L7.8 13.8 L2.4 9.2 L9.4 8.6 Z" fill="#f7cf4a" stroke="${INK}" stroke-width="1.6" stroke-linejoin="round"/></svg>`) },
+    heart:   { w: 12, label: "сердце", make: () => art(`<svg viewBox="0 0 100 100"><path d="M50 88 C 20 66, 6 46, 14 28 C 22 10, 44 12, 50 30 C 56 12, 78 10, 86 28 C 94 46, 80 66, 50 88 Z" fill="#ef493e" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><path d="M26 32 C 28 25, 34 22, 40 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>`) },
+    bolt:    { w: 10, label: "молния", make: () => art(`<svg viewBox="0 0 100 100"><path d="M58 4 L18 56 H46 L36 96 L82 40 H54 L66 4 Z" fill="#f7cf4a" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></svg>`) },
+    laptop:  { w: 22, label: "ноутбук", make: () => art(`<svg viewBox="0 0 400 262"><rect x="38" y="8" width="324" height="204" rx="16" fill="#29495b" stroke="${INK}" stroke-width="10"/><rect x="58" y="26" width="284" height="166" rx="7" fill="#1a3040"/><path d="M8 214 H392 L372 252 Q370 256 364 256 H36 Q30 256 28 252 Z" fill="#dde5e3" stroke="${INK}" stroke-width="10" stroke-linejoin="round"/><circle cx="200" cy="108" r="38" fill="#ff9fce" stroke="${INK}" stroke-width="8"/><path d="M188 90 L218 108 L188 126 Z" fill="${INK}"/></svg>`) },
+    clapper: { w: 16, label: "хлопушка", make: () => art(`<svg viewBox="0 0 100 100"><rect x="10" y="40" width="80" height="50" rx="6" fill="${INK}" stroke="${INK}" stroke-width="4"/><path d="M8 36 L84 14 L89 29 L13 51 Z" fill="#f5edcf" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/><path d="M26 31 L33 44 M44 26 L51 39 M62 20 L69 33" stroke="${INK}" stroke-width="5"/><text x="50" y="74" text-anchor="middle" font-size="15" fill="#f5edcf">ДУБЛЬ 1</text></svg>`) },
+    smile:   { w: 13, label: "смайлик", make: () => art(`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#f7cf4a" stroke="${INK}" stroke-width="5"/><circle cx="36" cy="42" r="5" fill="${INK}"/><circle cx="64" cy="42" r="5" fill="${INK}"/><path d="M30 60 Q50 80 70 60" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/></svg>`) },
+    cloud:   { w: 18, label: "облачко", make: () => art(`<svg viewBox="0 0 120 90"><path d="M30 78 C10 78 6 54 24 48 C20 28 44 18 56 32 C62 12 96 14 96 38 C114 40 116 74 94 78 Z" fill="#fff" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><text x="60" y="66" text-anchor="middle" font-size="30" fill="#ef493e">?!</text></svg>`) },
+    ai:      { w: 14, label: "чип ИИ", make: () => art(`<svg viewBox="0 0 100 100"><path d="M32 8 V22 M50 8 V22 M68 8 V22 M32 78 V92 M50 78 V92 M68 78 V92 M8 32 H22 M8 50 H22 M8 68 H22 M78 32 H92 M78 50 H92 M78 68 H92" stroke="${INK}" stroke-width="5" stroke-linecap="round"/><rect x="20" y="20" width="60" height="60" rx="11" fill="#25475c" stroke="${INK}" stroke-width="5"/><text x="50" y="61" text-anchor="middle" font-size="29" fill="#ff9fce">ИИ</text></svg>`) },
+    done:    { w: 18, label: "штамп «готово»", make: () => art(`<svg viewBox="0 0 124 70"><rect x="6" y="6" width="112" height="58" rx="12" fill="#fff" stroke="#ef493e" stroke-width="6"/><text x="62" y="46" text-anchor="middle" font-size="28" fill="#ef493e">ГОТОВО</text></svg>`) },
+    flower:  { w: 13, label: "ромашка", make: () => art(`<svg viewBox="0 0 100 100">${[0, 45, 90, 135, 180, 225, 270, 315].map(a => `<ellipse cx="50" cy="25" rx="11" ry="19" fill="#fff" stroke="${INK}" stroke-width="4" transform="rotate(${a} 50 50)"/>`).join("")}<circle cx="50" cy="50" r="15" fill="#f7cf4a" stroke="${INK}" stroke-width="4"/></svg>`) },
+    planet:  { w: 17, label: "планета", make: () => art(`<svg viewBox="0 0 120 90"><circle cx="60" cy="45" r="28" fill="#b9a6ea" stroke="${INK}" stroke-width="5"/><path d="M16 60 C4 72 32 72 62 61 C94 50 118 33 106 26" fill="none" stroke="${INK}" stroke-width="5" stroke-linecap="round"/><path d="M42 30 Q51 24 59 26" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg>`) },
+    coffee:  { w: 12, label: "кофе", make: () => art(`<svg viewBox="0 0 100 100"><path d="M40 6 C34 14 46 18 40 26 M56 6 C50 14 62 18 56 26" fill="none" stroke="${INK}" stroke-width="4" stroke-linecap="round"/><path d="M74 46 C94 46 94 72 70 72" fill="none" stroke="${INK}" stroke-width="5"/><path d="M18 34 H74 L68 88 H24 Z" fill="#f5edcf" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><path d="M21 52 H71" stroke="#ef493e" stroke-width="6"/></svg>`) },
+    wow:     { w: 18, label: "вау!", make: () => art(`<svg viewBox="0 0 120 90"><path d="M12 10 H108 Q114 10 114 16 V58 Q114 64 108 64 H48 L28 84 L32 64 H12 Q6 64 6 58 V16 Q6 10 12 10 Z" fill="#fff" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><text x="60" y="48" text-anchor="middle" font-size="30" fill="${INK}">ВАУ!</text></svg>`) }
+  };
+  const NAME_FONTS = [   // ключ, название, семейство, насыщенность, масштаб
+    ["shantell", "Маркер", '"Shantell Sans"', 600, 1], ["roboto", "Плакат", '"Roboto Condensed"', 800, 1.05],
+    ["caveat", "Ручка", '"Caveat"', 700, 1.35], ["marck", "Пропись", '"Marck Script"', 400, 1.15],
+    ["amatic", "Мелок", '"Amatic SC"', 700, 1.5], ["bubbles", "Пузыри", '"Rubik Bubbles"', 400, 1.05],
+    ["pixel", "Пиксели", '"Pixelify Sans"', 600, 1], ["lobster", "Вывеска", '"Lobster"', 400, 1.1],
+    ["unbounded", "Широкий", '"Unbounded"', 700, .82], ["paint", "Краска", '"Rubik Wet Paint"', 400, 1]];
+  const fontOf = key => NAME_FONTS.find(f => f[0] === key) || NAME_FONTS[0];
+  const displayName = () => state.custom.name || state.student.name || "";
+  const customizing = () => document.body.classList.contains("is-customizing");
+
+  let selIdx = -1, drag = null;
+  function placeSticker(el, st) {
+    el.style.left = st.x + "%"; el.style.top = st.y + "%";
+    el.style.width = (ST[st.k].w * st.s) + "%"; el.style.setProperty("--r", st.r + "deg");
+  }
+  function stickerEl(st, i, fresh) {
+    const el = h("div", { class: "stk" + (i === selIdx ? " is-sel" : "") + (fresh ? " is-new" : ""), "aria-hidden": "true" }, ST[st.k].make());
+    placeSticker(el, st);
+    el.addEventListener("pointerdown", e => {
+      if (!customizing()) return;
+      e.preventDefault(); e.stopPropagation();
+      select(state.custom.stickers.indexOf(st));
+      const rect = $("#stickers").getBoundingClientRect();
+      drag = { id: e.pointerId, el, st, px: e.clientX, py: e.clientY, x: st.x, y: st.y, w: rect.width, h: rect.height };
+      el.setPointerCapture(e.pointerId);
+    });
+    el.addEventListener("pointermove", e => {
+      if (!drag || e.pointerId !== drag.id) return;
+      drag.st.x = num(drag.x + (e.clientX - drag.px) / drag.w * 100, 0, 100, 50);
+      drag.st.y = num(drag.y + (e.clientY - drag.py) / drag.h * 100, 0, 100, 50);
+      placeSticker(drag.el, drag.st);
+    });
+    const end = e => { if (drag && e.pointerId === drag.id) { drag = null; changed(); } };
+    el.addEventListener("pointerup", end); el.addEventListener("pointercancel", end);
+    el.addEventListener("click", e => e.stopPropagation());
+    return el;
+  }
+  function renderStickers(freshIdx) {
+    $("#stickers").replaceChildren(...state.custom.stickers.map((st, i) => stickerEl(st, i, i === freshIdx)));
+  }
+  function select(i) {
+    selIdx = i;
+    [...$("#stickers").children].forEach((el, j) => el.classList.toggle("is-sel", j === i));
+    fillSelbar();
+  }
+  function fitName(el, scale) {
+    let size = Math.round(26 * scale);
+    el.style.fontSize = size + "px";
+    while (el.scrollWidth > el.clientWidth + 1 && size > 13) el.style.fontSize = --size + "px";
+  }
+  function renderOwner() {
+    const slot = $("#ownerSlot"), f = fontOf(state.custom.font);
+    let el;
+    if (S.name) el = h("span", { class: "owner__name", text: displayName() });
+    else {
+      el = h("input", { class: "owner__input", type: "text", placeholder: "впиши своё имя", maxlength: "40", "aria-label": "Имя владельца блокнота" });
+      el.value = displayName();
+      el.addEventListener("input", () => { state.custom.name = el.value; state.student.name = el.value.trim(); fitName(el, f[4]); refreshNamePreviews(); changed(); });
+      el.addEventListener("click", e => e.stopPropagation());
+      el.addEventListener("keydown", e => { if (e.key === "Enter" && !customizing()) openBook(); });
+    }
+    el.style.fontFamily = `${f[2]}, "Shantell Sans", cursive`;
+    el.style.fontWeight = f[3];
+    slot.replaceChildren(el);
+    const fit = () => fitName(el, f[4]);
+    requestAnimationFrame(fit);
+    document.fonts?.load(`${f[3]} 26px ${f[2]}`, displayName() || "Имя").then(fit, () => {});
+  }
+  function applyCover() {
+    const cv = $("#cover"), cu = state.custom;
+    cv.dataset.color = cu.color; cv.dataset.pattern = cu.pattern; cv.dataset.band = cu.band;
+    $("#coverTitle").textContent = C.title;
+    $("#coverSub").textContent = C.subtitle;
+    renderStickers(); renderOwner();
+  }
+
+  /* ---------- мастерская ---------- */
+  const COLOR_UI = [["night", "Ночь", "#25475c"], ["scarlet", "Алый", "#ef493e"], ["pink", "Жвачка", "#ff9fce"], ["yellow", "Лимон", "#f7cf4a"], ["mint", "Мята", "#9fd3bf"], ["lilac", "Сирень", "#b9a6ea"]];
+  const PATTERN_UI = [["plain", "без узора"], ["dots", "горох"], ["stripes", "полоски"], ["grid", "клетка"]];
+  const BAND_UI = [["scarlet", "алая резинка", "#ef493e"], ["pink", "розовая резинка", "#ff9fce"], ["yellow", "жёлтая резинка", "#f7cf4a"], ["cream", "кремовая резинка", "#f5edcf"], ["ink", "чернильная резинка", "#192d3b"], ["none", "без резинки", null]];
+  function pressGroup(btn) { btn.parentElement.querySelectorAll("[aria-pressed]").forEach(b => b.setAttribute("aria-pressed", String(b === btn))); }
+  function setCustom(key, value, btn) { state.custom[key] = value; pressGroup(btn); applyCover(); changed(); }
+  function refreshNamePreviews() { document.querySelectorAll(".fontbtn b").forEach(b => (b.textContent = displayName() || "Имя")); }
+  function addSticker(k) {
+    const list = state.custom.stickers;
+    if (list.length >= 40) return toast("На обложке уже 40 наклеек — отклей что-нибудь, чтобы добавить новую.", true);
+    list.push({ k, x: Math.round(28 + Math.random() * 44), y: Math.round(24 + Math.random() * 44), r: Math.round(Math.random() * 24 - 12), s: 1 });
+    selIdx = list.length - 1;
+    renderStickers(selIdx); fillSelbar(); changed();
+  }
+  function fillSelbar() {
+    const bar = $("#selbar"); if (!bar) return;
+    const list = state.custom.stickers, st = list[selIdx];
+    if (!st) return bar.replaceChildren(h("p", { class: "hint", text: "Нажми на наклейку на обложке — её можно повернуть, увеличить или отклеить. Тащи мышкой или пальцем." }));
+    const act = (label, aria, fn) => h("button", { class: "chip", type: "button", "aria-label": aria, title: aria, onclick: () => { fn(); changed(); } }, label);
+    const re = () => { const el = $("#stickers").children[selIdx]; if (el) placeSticker(el, st); };
+    bar.replaceChildren(
+      h("span", { class: "selbar__k", text: `Выбрана: ${ST[st.k].label}` }),
+      act("↺", "Повернуть влево", () => { st.r -= 15; re(); }),
+      act("↻", "Повернуть вправо", () => { st.r += 15; re(); }),
+      act("−", "Уменьшить", () => { st.s = num(+(st.s - .15).toFixed(2), .3, 3, 1); re(); }),
+      act("+", "Увеличить", () => { st.s = num(+(st.s + .15).toFixed(2), .3, 3, 1); re(); }),
+      act("Наверх", "Положить поверх остальных", () => { list.push(list.splice(selIdx, 1)[0]); selIdx = list.length - 1; renderStickers(); }),
+      act("Отклеить", "Отклеить наклейку", () => { list.splice(selIdx, 1); selIdx = -1; renderStickers(); fillSelbar(); }));
+  }
+  function renderStudio() {
+    const cu = state.custom;
+    const swatches = (items, key) => h("div", { class: "swatches", role: "group" }, items.map(([k, label, color]) => {
+      const b = h("button", { class: "sw" + (color ? "" : " sw--none"), type: "button", title: label, "aria-label": label, "aria-pressed": String(cu[key] === k), style: color ? `--c:${color}` : null });
+      b.addEventListener("click", () => setCustom(key, k, b)); return b;
+    }));
+    const chips = (items, key) => h("div", { class: "chips", role: "group" }, items.map(([k, label]) => {
+      const b = h("button", { class: "chip", type: "button", "aria-pressed": String(cu[key] === k), text: label });
+      b.addEventListener("click", () => setCustom(key, k, b)); return b;
+    }));
+    const nameIn = h("input", { class: "name-in", type: "text", maxlength: "40", placeholder: "Как тебя подписать", "aria-label": "Имя на обложке" });
+    nameIn.value = displayName();
+    nameIn.addEventListener("input", () => { cu.name = nameIn.value; if (!S.name) state.student.name = nameIn.value.trim(); renderOwner(); refreshNamePreviews(); changed(); });
+    const fonts = h("div", { class: "fonts", role: "group", "aria-label": "Шрифт имени" }, NAME_FONTS.map(([k, label, fam, w, sc]) => {
+      const b = h("button", { class: "fontbtn", type: "button", "aria-pressed": String(cu.font === k) },
+        h("b", { style: `font-family:${fam};font-weight:${w};font-size:${Math.round(21 * sc)}px`, text: displayName() || "Имя" }), h("small", { text: label }));
+      b.addEventListener("click", () => setCustom("font", k, b)); return b;
+    }));
+    const tray = h("div", { class: "tray" }, STICKER_KEYS.map(k => h("button", { type: "button", title: ST[k].label, "aria-label": `Наклеить: ${ST[k].label}`, onclick: () => addSticker(k) }, ST[k].make())));
+    const reset = h("button", { class: "pill pill--small pill--ghost", type: "button", text: "Вернуть как было" });
+    reset.addEventListener("click", () => {
+      if (!confirm("Вернуть обложку как была при выдаче? Имя останется.")) return;
+      state.custom = Object.assign(defaultCustom(), { name: cu.name, font: cu.font }); selIdx = -1; applyCover(); renderStudio(); changed();
+    });
+    const clear = h("button", { class: "pill pill--small pill--ghost", type: "button", text: "Отклеить все" });
+    clear.addEventListener("click", () => { cu.stickers = []; selIdx = -1; renderStickers(); fillSelbar(); changed(); });
+    $("#studioBody").replaceChildren(
+      h("p", { class: "hint", text: CLOUD ? "Всё сохраняется само." : "Всё сохраняется само и едет вместе с файлом, который ты отправляешь на проверку." }),
+      h("h3", { text: "Цвет обложки" }), swatches(COLOR_UI, "color"),
+      h("h3", { text: "Узор" }), chips(PATTERN_UI, "pattern"),
+      h("h3", { text: "Резинка" }), swatches(BAND_UI, "band"),
+      h("h3", { text: "Имя на обложке" }), nameIn, fonts,
+      h("h3", { text: "Наклейки" }), tray, h("div", { class: "selbar", id: "selbar" }),
+      h("div", { class: "studio__foot" }, reset, clear));
+    fillSelbar();
+  }
+  function openStudio() {
+    if (opened || busy || (CLOUD && !user)) return;
+    document.body.classList.add("is-customizing");
+    const st = $("#studio"); st.inert = false;
+    renderStudio();
+    st.querySelector("h2").focus({ preventScroll: true });
+  }
+  function closeStudio() {
+    if (!customizing()) return;
+    document.body.classList.remove("is-customizing");
+    $("#studio").inert = true;
+    select(-1);
+    $("#customBtn").focus({ preventScroll: true });
+  }
+
+  /* ---------- открыть и закрыть блокнот ---------- */
+  let opened = false;
+  const isCoverHash = () => location.hash === "#/cover";
+  async function openBook() {
+    if (opened || busy || customizing() || (CLOUD && !user)) return;
+    opened = true; busy = true;
+    document.body.classList.remove("is-book-closed");
+    try { sessionStorage.setItem("vsmysle-open", "1"); } catch (e) {}
+    if (isCoverHash()) history.replaceState(null, "", "#/map");
+    const cover = $("#cover");
+    const i = routeIndex();
+    cur = i; const c = build(i); markTab(i);
+    document.title = `${nameOf(i)} · Блокнот`;
+    const spread = isSpread();
+    let backIn = null, back = null;
+    if (spread) { backIn = pageIn(c.left); back = makeTurn("l", backIn, true); fill(R, c.right); }
+    else fill(R, c.single);
+    BOOK.classList.add("is-opening");
+    BOOK.classList.remove("is-closed");
+    await flip(cover, back, -90);
+    if (spread) { moveInto(L, backIn); back.remove(); }
+    BOOK.classList.remove("is-opening");
+    cover.hidden = true;
+    busy = false;
+    after();
+    if (queued != null) { const q = queued; queued = null; go(q, true); }
+  }
+  async function closeBook() {
+    if (!opened || busy) return;
+    opened = false; busy = true;
+    try { sessionStorage.setItem("vsmysle-open", "0"); } catch (e) {}
+    const cover = $("#cover"), spread = isSpread();
+    BOOK.classList.add("is-closing");
+    cover.hidden = false; cover.style.visibility = "hidden";
+    let front = null;
+    if (spread) { front = makeTurn("l", keepScroll(cloneOf(L), L)); BOOK.classList.add("is-opening"); }
+    await flip(front, cover, 90, () => BOOK.classList.add("is-closed"));    // книга едет к центру, пока ложится обложка
+    front?.remove();
+    BOOK.classList.remove("is-opening", "is-closing");
+    L.replaceChildren(); R.replaceChildren();          // под закрытой обложкой ничего не рисуем
+    cur = null; busy = false;
+    document.body.classList.add("is-book-closed");
+    document.title = `Обложка · Блокнот`;
+    $("#openBtn").focus({ preventScroll: true });
+  }
+
+  /* ---------- масштаб под большие мониторы ---------- */
+  let scaleK = 1;
+  function fitBook() {
+    const st = $(".stage"), cs = getComputedStyle(st);
+    const w = st.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const hgt = st.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    scaleK = isSpread() ? Math.max(1, Math.min(w / 1760, hgt / 1000)) : 1;
+    BOOK.style.setProperty("--k", scaleK.toFixed(4));
+  }
+  addEventListener("resize", fitBook);
+
+  /* ---------- сайт: вход и записи в аккаунте ----------
+     Записи — в Firestore, notebooks/{uid}; пишет туда только сам ученик. Пометки Вани — отдельно, marks/{uid}:
+     их пишет только он (так настроены правила firestore.rules), поэтому записи ученика и пометки друг друга не перетирают.
+     Копия всего лежит и в этом браузере: без интернета блокнот работает, изменения уезжают, когда появится связь.
+     Что отправлять, считаем сравнением с последней версией с сервера (synced, тоже хранится в браузере) —
+     поэтому ничего не теряется, даже если вкладку закрыли до отправки. Поменяли одно и то же и здесь,
+     и на другом устройстве — побеждает здесь: эта версия уедет следующей. */
+  let fbAuth = null, fbDb = null, nbRef = null, synced = null, pushing = false, marksSeen = false, retryT = null;
+  const unsubs = [];
+  const SYNC_KEY = () => KEY + ":synced";
+  const sorted = (k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map(key => [key, x[key]])) : x);
+  const same = (a, b) => JSON.stringify(a ?? null, sorted) === JSON.stringify(b ?? null, sorted);   // порядок полей с сервера другой
+  const MAPS = ["tasks", "brief", "words"];
+  function fromServer(d) {             // версия с сервера в том же виде, что у нас; чужого не берём
+    const tasks = {}, brief = {};
+    for (const [id, v] of Object.entries(d?.tasks || {})) if (byId[id] && v && typeof v === "object") tasks[id] = v;
+    for (const [k, v] of Object.entries(d?.brief || {})) if (typeof v === "string") brief[k] = v.slice(0, 4000);
+    return { tasks, brief, words: sanitizeWords(d?.words), custom: d?.custom ? sanitizeCustom(d.custom) : null,
+      student: { name: typeof d?.student?.name === "string" ? d.student.name.slice(0, 40) : "" } };
+  }
+  function saveSynced() { try { localStorage.setItem(SYNC_KEY(), JSON.stringify(synced)); } catch (e) {} }
+  function changes() {                 // что поменялось здесь по сравнению с сервером: [раздел, id, значение]
+    const out = [];
+    for (const k of MAPS) {
+      const cur = state[k] || {}, was = synced[k] || {};
+      for (const id of new Set([...Object.keys(cur), ...Object.keys(was)]))
+        if (!same(cur[id], was[id])) out.push([k, id, id in cur ? cur[id] : undefined]);
+    }
+    if (!same(state.custom, synced.custom)) out.push(["custom", null, state.custom]);
+    if ((state.student.name || "") !== (synced.student.name || "")) out.push(["student", null, { name: state.student.name || "" }]);
+    return out;
+  }
+  const SYNC_TEXT = { ok: ["сохранено", "Записи сохранены в аккаунте"], saving: ["сохраняю…", "Отправляю записи в аккаунт"],
+    offline: ["нет связи — отправлю позже", "Записи сохранены в этом браузере и уедут в аккаунт, когда появится интернет"],
+    error: ["не отправляется — записи здесь", "Записи сохранены в этом браузере. Если не пройдёт само за пару минут — напиши в «Помогите»"] };
+  function setSync(s) {
+    const el = $("#sync"); if (!el) return;
+    el.hidden = false; el.dataset.s = s;
+    el.lastElementChild.textContent = SYNC_TEXT[s][0]; el.title = SYNC_TEXT[s][1];
+  }
+  const pushSoon = debounce(() => push(), 800);
+  async function push() {
+    if (!user || !synced || pushing) return;
+    const list = changes();
+    if (!list.length) return setSync(navigator.onLine === false ? "offline" : "ok");
+    pushing = true; setSync("saving"); clearTimeout(retryT);
+    const sent = list.map(([k, id, v]) => [k, id, v === undefined ? undefined : JSON.parse(JSON.stringify(v))]);   // снимок: пока едет, записи могут поменяться
+    const data = { format: 1, courseId: C.id, updatedAt: new Date().toISOString(), serverAt: FIRE.serverTimestamp() };
+    for (const [k, id, v] of sent) {
+      if (id == null) data[k] = v;
+      else (data[k] ||= {})[id] = v === undefined ? FIRE.deleteField() : v;
+    }
+    const slow = setTimeout(() => setSync("offline"), 7000);   // запись висит — скорее всего, нет связи; Firestore дошлёт сам
+    try {
+      await FIRE.setDoc(nbRef, data, { merge: true });
+    } catch (e) {
+      clearTimeout(slow); pushing = false; setSync("error");
+      retryT = setTimeout(push, 20000); return;
+    }
+    clearTimeout(slow);
+    for (const [k, id, v] of sent) {
+      if (id == null) synced[k] = v;
+      else if (v === undefined) delete synced[k][id]; else synced[k][id] = v;
+    }
+    saveSynced(); pushing = false;
+    push();                              // пока отправляли, могли появиться новые изменения
+  }
+  function refreshSafe() {             // пришло с другого устройства или от Вани: перерисовать, но не под пальцами у пишущего
+    if (!opened) return;
+    if (document.activeElement?.closest(".page input, .page textarea")) {
+      document.activeElement.addEventListener("blur", () => setTimeout(refreshSafe, 0), { once: true }); return;
+    }
+    const yl = L.scrollTop, yr = R.scrollTop;
+    renderNow(); L.scrollTop = yl; R.scrollTop = yr;
+  }
+  function adopt(d) {                  // версия с сервера: берём то, что поменялось там и не трогали здесь
+    const r = fromServer(d);
+    const base = synced || { tasks: {}, brief: {}, words: {}, custom: state.custom, student: { name: state.student.name || "" } };
+    let touched = false;
+    const merge = (cur, was, rem, set) => {
+      if (same(rem, cur) || same(rem, was)) return;      // уже совпадает или там не меняли
+      if (!same(cur, was)) return;                        // поменяли и здесь — побеждает эта версия
+      set(rem === undefined ? undefined : JSON.parse(JSON.stringify(rem))); touched = true;   // копия: synced и записи не должны делить один объект
+    };
+    for (const k of MAPS) {
+      const cur = (state[k] ||= {}), was = base[k] || {}, rem = r[k];
+      for (const id of new Set([...Object.keys(cur), ...Object.keys(was), ...Object.keys(rem)]))
+        merge(cur[id], was[id], rem[id], v => { if (v === undefined) delete cur[id]; else cur[id] = v; });
+    }
+    if (r.custom) merge(state.custom, base.custom, r.custom, v => { state.custom = v; });
+    merge(state.student.name || "", base.student.name || "", r.student.name, v => { state.student.name = v; });
+    synced = r; saveSynced();
+    if (!touched) return;
+    persist(); applyCover(); refreshChrome(); unlockSaved(); refreshSafe();
+  }
+  function sanitizeMarks(m) {
+    const items = {};
+    for (const [id, v] of Object.entries(m?.items || {})) {
+      if (!byId[id] || !v || typeof v !== "object") continue;
+      const verdict = v.verdict ? "seen" : null, comment = typeof v.comment === "string" ? v.comment.slice(0, 2000) : "";
+      if (verdict || comment) items[id] = { verdict, comment };
+    }
+    return { general: typeof m?.general === "string" ? m.general.slice(0, 4000) : "", at: typeof m?.at === "string" ? m.at : null, items };
+  }
+  function takeMarks(m) {
+    const fb = sanitizeMarks(m), old = state.feedback;
+    if (same(fb, old)) return;
+    const news = Object.entries(fb.items).some(([id, v]) => (v.comment && v.comment !== old.items?.[id]?.comment) || (v.verdict && !old.items?.[id]?.verdict))
+      || (fb.general && fb.general !== old.general);
+    state.feedback = fb; persist(); refreshChrome(); refreshSafe();
+    if (news) toast(marksSeen ? `${AUTHOR.short} оставил пометку — ищи жёлтые стикеры.` : `Есть новые пометки от ${AUTHOR_GEN} — ищи жёлтые стикеры.`);
+  }
+  function listen() {
+    nbRef = FIRE.doc(fbDb, "notebooks", user.uid);
+    // fromCache — без связи кэш пустой или старый; принимаем только то, что подтвердил сервер
+    unsubs.push(FIRE.onSnapshot(nbRef, { includeMetadataChanges: true }, snap => {
+      if (snap.metadata.hasPendingWrites || snap.metadata.fromCache) return;
+      adopt(snap.exists() ? snap.data() : {}); push();
+    }, () => setSync("error")));
+    unsubs.push(FIRE.onSnapshot(FIRE.doc(fbDb, "marks", user.uid), { includeMetadataChanges: true }, snap => {
+      if (snap.metadata.fromCache) return;
+      takeMarks(snap.exists() ? snap.data() : null); marksSeen = true;
+    }, () => {}));
+  }
+  async function startSession(u) {
+    let admin = false;
+    try { admin = !!(await u.getIdTokenResult()).claims.admin; } catch (e) {}
+    if (admin) { location.replace(CLOUD.desk || "stol/"); return false; }       // Ване — на Стол
+    user = u;
+    KEY = `vsmysle:${C.id}:u:${u.uid}`;
+    state = load(); state.student.id = u.uid;
+    try { synced = JSON.parse(localStorage.getItem(SYNC_KEY())); } catch (e) { synced = null; }
+    if (synced) synced = fromServer(synced);
+    document.body.classList.remove("is-logged-out"); $("#login").hidden = true;
+    applyCover(); renderTabs(); refreshChrome(); unlockSaved();
+    setSync(navigator.onLine === false ? "offline" : "saving");
+    listen();
+    return true;
+  }
+  function showLogin() {
+    user = null;
+    document.body.classList.add("is-logged-out");
+    $("#login").hidden = false; $("#sync").hidden = true;
+    applyCover();
+    if (isSpread()) setTimeout(() => $("#loginIn").focus({ preventScroll: true }), 60);
+  }
+  const LOGIN_ERR = {
+    "auth/invalid-credential": "Не тот логин или пароль. Проверь, что раскладка английская и нет лишних пробелов.",
+    "auth/invalid-email": "Не тот логин или пароль. Проверь, что раскладка английская и нет лишних пробелов.",
+    "auth/wrong-password": "Не тот логин или пароль. Проверь, что раскладка английская и нет лишних пробелов.",
+    "auth/user-not-found": "Не тот логин или пароль. Проверь, что раскладка английская и нет лишних пробелов.",
+    "auth/user-disabled": "Этот вход отключён. Напиши в «Помогите».",
+    "auth/too-many-requests": "Слишком много попыток подряд. Подожди пару минут и попробуй снова.",
+    "auth/network-request-failed": "Нет связи с сервером. Проверь интернет — или включи VPN и попробуй ещё раз."
+  };
+  async function signIn(e) {
+    e.preventDefault();
+    const login = $("#loginIn").value.trim().toLowerCase(), pass = $("#passIn").value, msg = $("#loginMsg"), btn = $("#loginBtn");
+    if (!login) return $("#loginIn").focus();
+    if (!pass) return $("#passIn").focus();
+    if (/[а-яё]/i.test(login + pass)) { msg.textContent = "Логин и пароль пишутся латиницей — переключи раскладку на английскую."; return; }
+    btn.disabled = true; msg.textContent = "";
+    try {
+      await FIRE.signInWithEmailAndPassword(fbAuth, login.includes("@") ? login : `${login}@${CLOUD.domain}`, pass);
+      $("#passIn").value = "";
+    } catch (err) {
+      msg.textContent = LOGIN_ERR[err?.code] || "Не получилось войти. Напиши в «Помогите» — разберёмся.";
+    }
+    btn.disabled = false;
+  }
+  async function logOut() {
+    if (pushing || (synced && changes().length)) {
+      push();
+      return toast(navigator.onLine === false ? "Нет связи — часть записей ещё не в аккаунте. Выйти можно, когда появится интернет."
+        : "Секунду — ещё отправляю записи. Попробуй выйти через пару секунд.", true);
+    }
+    unsubs.splice(0).forEach(f => f());
+    try { localStorage.removeItem(KEY); localStorage.removeItem(SYNC_KEY()); sessionStorage.setItem("vsmysle-open", "0"); } catch (e) {}   // на чужом компьютере ничего не оставляем
+    await FIRE.signOut(fbAuth);
+    location.replace(location.pathname);
+  }
+  function bootCloud(then) {
+    document.body.classList.add("is-auth-wait");
+    if (CLOUD.sw && "serviceWorker" in navigator) navigator.serviceWorker.register(CLOUD.sw).catch(() => {});   // чтобы блокнот открывался и без интернета
+    const emu = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);        // локальная проверка — эмулятор Firebase, не настоящая база
+    const app = FIRE.initializeApp(emu ? { apiKey: "demo-key", projectId: CLOUD.emuProject || "demo-vsmysle", authDomain: location.hostname } : CLOUD.config);
+    fbAuth = FIRE.getAuth(app);
+    fbDb = FIRE.initializeFirestore(app, { ignoreUndefinedProperties: true });
+    if (emu) { FIRE.connectAuthEmulator(fbAuth, `http://${location.hostname}:9099`, { disableWarnings: true }); FIRE.connectFirestoreEmulator(fbDb, location.hostname, 8080); }
+    $("#login").addEventListener("submit", signIn);
+    $("#login").addEventListener("click", e => e.stopPropagation());
+    $("#login").addEventListener("keydown", e => e.stopPropagation());
+    addEventListener("online", () => push());
+    addEventListener("offline", () => setSync("offline"));
+    document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") { persist(); push(); } });
+    let first = true;
+    FIRE.onAuthStateChanged(fbAuth, async u => {
+      if (u && user?.uid === u.uid) return;
+      const go = u ? await startSession(u) : (showLogin(), true);
+      if (!go) return;
+      document.body.classList.remove("is-auth-wait");
+      if (first) { first = false; then(); }
+    });
+  }
+
+  /* ---------- старт ---------- */
+  fitBook();
+  if (isFresh) persist();
+  applyCover(); renderTabs(); renderStorageWarn(); refreshChrome();
+  if (CLOUD) { $("#saveTop").hidden = true; }
+  $("#saveTop").addEventListener("click", exportJournal);
+  $("#cover").addEventListener("click", () => { if (customizing()) select(-1); else openBook(); });
+  $("#openBtn").addEventListener("click", e => { e.stopPropagation(); openBook(); });
+  $("#customBtn").addEventListener("click", openStudio);
+  $("#studioDone").addEventListener("click", closeStudio);
+  addEventListener("hashchange", () => {
+    if (customizing()) closeStudio();
+    if (isCoverHash()) { if (opened) closeBook(); return; }
+    if (!opened) openBook(); else go(routeIndex(), true);
+  });
+  addEventListener("beforeunload", e => {
+    persist();
+    // закрывают вкладку, пока запись едет в аккаунт: просим секунду. Без связи не держим — копия и так в браузере, уедет в следующий раз
+    if (CLOUD && user && synced && !["offline", "error"].includes($("#sync").dataset.s) && (pushing || changes().length)) { push(); e.preventDefault(); e.returnValue = ""; }
+  });
+  addEventListener("keydown", e => {
+    if (e.target.closest("input, textarea, [contenteditable]") || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (customizing()) {
+      if (e.key === "Escape") return closeStudio();
+      const st = state.custom.stickers[selIdx];
+      if (!st) return;
+      const step = e.shiftKey ? 5 : 1, moves = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
+      if (moves[e.key]) {
+        e.preventDefault();
+        st.x = num(st.x + moves[e.key][0], 0, 100, 50); st.y = num(st.y + moves[e.key][1], 0, 100, 50);
+        placeSticker($("#stickers").children[selIdx], st); changed();
+      } else if (e.key === "Delete" || e.key === "Backspace") {
+        e.preventDefault(); state.custom.stickers.splice(selIdx, 1); selIdx = -1; renderStickers(); fillSelbar(); changed();
+      }
+      return;
+    }
+    if (!opened) { if (e.key === "ArrowRight") openBook(); return; }
+    if (e.key === "ArrowRight" && cur < SPREADS.length - 1) location.hash = hashOf(cur + 1);
+    if (e.key === "ArrowLeft") location.hash = cur > 0 ? hashOf(cur - 1) : "#/cover";
+  });
+  SPREAD_MQ.addEventListener("change", () => { fitBook(); if (opened) renderNow(); });
+  let seen = false;
+  try { seen = sessionStorage.getItem("vsmysle-open") === "1"; } catch (e) {}
+  pullBase();
+  function startView() {
+    unlockSaved();
+    if (seen && !isCoverHash() && (!CLOUD || user)) { opened = true; BOOK.classList.remove("is-closed"); $("#cover").hidden = true; go(routeIndex(), false); }
+    else { $("#cover").hidden = false; document.body.classList.add("is-book-closed"); }
+  }
+  if (CLOUD) bootCloud(startView); else startView();
+})();
+</script>
+</body>
+</html>
